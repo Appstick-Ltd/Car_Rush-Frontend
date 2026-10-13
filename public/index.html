@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rush: Draw & Drive — Official Mobile Game & Community</title>
+  <meta name="description" content="Car Rush: Draw & Drive is a thrilling 2D physics path-drawing casual mobile game. Draw glowing bridges with your finger to guide your toy car across chasms and hazards to the finish line!">
+  <meta name="keywords" content="Car Rush, Draw and Drive, physics puzzle game, mobile casual game, Flutter game, Flame Forge2D, kid friendly games, family games, Google Play">
+  <meta name="theme-color" content="#0a0e17">
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Car Rush: Draw & Drive — Mobile Physics Casual Game">
+  <meta property="og:description" content="Draw bridges, dodge hazards, and rush to victory! Built with Flame Forge2D physics.">
+  <meta property="og:image" content="/assets/images/hero_banner.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/app_icon.png">
+  <link rel="apple-touch-icon" href="/assets/images/app_icon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css?v=2">
+</head>
+<body data-biome="meadow">
+
+  <!-- Ambient Glowing Background Blobs -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+
+  <!-- BloodBank Style Header / Navigation (matching https://bloodbank.appstick.com.bd/) -->
+  <header class="Navbar-module__header">
+    <div class="Navbar-module__container">
+      <a href="/" class="Navbar-module__logo" id="brandLogo">
+        <div class="Navbar-module__logoIconBox">
+          <img src="/assets/images/app_icon.png" alt="Car Rush Logo">
+        </div>
+        <div>
+          <div class="Navbar-module__brandTitle">CAR <span class="Navbar-module__brandAccent">RUSH</span></div>
+          <p class="Navbar-module__brandSub">Draw &amp; Drive. Rush to Victory.</p>
+        </div>
+      </a>
+
+      <nav class="Navbar-module__nav">
+        <a href="#hero" class="Navbar-module__navLink Navbar-module__navLinkActive">Home</a>
+        <a href="#simulator" class="Navbar-module__navLink">Play Demo</a>
+        <a href="#biomes" class="Navbar-module__navLink">Biomes</a>
+        <a href="#features" class="Navbar-module__navLink">Features</a>
+        <a href="#screenshots" class="Navbar-module__navLink">Gallery</a>
+        <a href="/privacy" class="Navbar-module__navLink">Privacy Policy</a>
+        <a href="#faq" class="Navbar-module__navLink">FAQ</a>
+      </nav>
+
+      <div class="Navbar-module__rightWrap">
+        <button class="Navbar-module__audioBtn active" id="audioToggleBtn" title="Sound Effects On/Off" aria-label="Toggle Sound Effects">
+          🔊
+        </button>
+        <a href="#download" class="Navbar-module__btnDownload" id="btnHeaderDownload">
+          <span>Download App</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Text & Download CTAs -->
+        <div class="hero-content">
+
+          <h1 class="hero-title">
+            Draw The Bridge.<br>
+            <span class="text-gradient">Rush To Victory!</span>
+          </h1>
+
+          <p class="hero-description">
+            Unleash your creativity in the ultimate 2D physics puzzle racing adventure! 
+            Draw glowing neon lines with your finger to build sturdy bridges, bypass perilous spike pits, 
+            avoid fiery magma lakes, and guide your adorable toy race car safely to the checkered finish flag.
+          </p>
+
+          <!-- App Store Download Badges -->
+          <div class="store-badges-group">
+            <a href="#download" class="store-badge-card" id="btnGooglePlayHero">
+              <span class="store-badge-icon" aria-hidden="true">🤖</span>
+              <div class="store-badge-texts">
+                <span class="store-badge-caption">GET IT ON</span>
+                <span class="store-badge-platform">Google Play</span>
+              </div>
+            </a>
+
+            <a href="#download" class="store-badge-card" id="btnAppStoreHero">
+              <span class="store-badge-icon" aria-hidden="true">🍏</span>
+              <div class="store-badge-texts">
+                <span class="store-badge-caption">Download on the</span>
+                <span class="store-badge-platform">App Store</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Hero Social Proof Stats -->
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <span class="stat-num">4.9 <span>★</span></span>
+              <span class="stat-label">Google Play Rating</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100+</span>
+              <span class="stat-label">Physics Levels</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Family Safe (COPPA)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive App Simulator & Mini-Game -->
+        <div class="hero-phone-container" id="simulator">
+          <!-- Floating Badges -->
+          <div class="phone-floating-badge badge-top-left">
+            <div class="badge-icon-box badge-icon-stars">⭐</div>
+            <div>
+              <div class="badge-text-title">3-Star Mastery</div>
+              <div class="badge-text-sub">Efficient ink score</div>
+            </div>
+          </div>
+
+          <div class="phone-floating-badge badge-bottom-right">
+            <div class="badge-icon-box badge-icon-shield">🛡️</div>
+            <div>
+              <div class="badge-text-title">Families Certified</div>
+              <div class="badge-text-sub">Child safe & private</div>
+            </div>
+          </div>
+
+          <!-- Smartphone Mockup Frame -->
+          <div class="phone-device-frame">
+            <div class="phone-notch">
+              <div class="notch-sensor"></div>
+              <div class="notch-camera"></div>
+            </div>
+
+            <div class="phone-inner-screen">
+              <!-- Simulator Header Navigation -->
+              <div class="simulator-tab-bar">
+                <button class="sim-tab-btn active" data-tab="canvas" id="tabSimCanvas">🎮 Live Demo</button>
+                <button class="sim-tab-btn" data-tab="meadow" id="tabSimMeadow">✏️ Drawing</button>
+                <button class="sim-tab-btn" data-tab="lava" id="tabSimLava">⚡ Driving</button>
+              </div>
+
+              <!-- View 1: Live Playable Canvas -->
+              <div class="simulator-view active" id="simView-canvas">
+                <div id="gameCanvasContainer">
+                  <canvas id="physicsCanvas"></canvas>
+
+                  <!-- In-Canvas HUD -->
+                  <div class="canvas-hud-overlay">
+                    <div class="hud-pill hud-ink-bar">
+                      <span>Ink</span>
+                      <div class="ink-track">
+                        <div class="ink-fill" id="simInkFill"></div>
+                      </div>
+                    </div>
+                    <div class="hud-pill" id="simScoreBadge">
+                      <span>Draw a bridge!</span>
+                    </div>
+                  </div>
+
+                  <!-- Canvas Bottom Action Controls -->
+                  <div class="canvas-action-bar">
+                    <button class="canvas-tool-btn" id="btnCanvasPreset" title="Load sample bridge curve">
+                      ⚡ Demo Line
+                    </button>
+                    <button class="canvas-tool-btn" id="btnCanvasClear" title="Clear drawn bridge">
+                      🔄 Clear
+                    </button>
+                    <button class="canvas-drive-btn" id="btnCanvasDrive">
+                      DRIVE! 🚗💨
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- View 2: Meadow Drawing Screenshot -->
+              <div class="simulator-view" id="simView-meadow">
+                <img src="/assets/images/screenshot_meadow.svg" alt="Authentic Drawing Phase Gameplay" class="sim-screenshot-img">
+              </div>
+
+              <!-- View 3: Magma Driving Screenshot -->
+              <div class="simulator-view" id="simView-lava">
+                <img src="/assets/images/screenshot_lava.svg" alt="Authentic Driving Phase Gameplay" class="sim-screenshot-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Biome Selector -->
+    <section class="section" id="biomes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Dynamic Environments</span>
+          <h2 class="section-title">Explore 4 Exciting Biomes</h2>
+          <p class="section-subtitle">
+            Tap a biome card below to dynamically transform the atmosphere and preview upcoming world challenges!
+          </p>
+        </div>
+
+        <div class="biome-selector-grid">
+          <!-- Biome 1 -->
+          <div class="biome-card active" data-biome="meadow" id="biomeMeadow">
+            <div class="biome-icon-header">
+              <span class="biome-emoji">🌤️</span>
+              <span class="biome-levels-tag">Levels 1 - 25</span>
+            </div>
+            <h3 class="biome-title">Sunny Meadow</h3>
+            <p class="biome-desc">
+              Gentle grassy cliffs, drifting clouds, and golden star pickups. The perfect proving ground for aspiring bridge engineers!
+            </p>
+          </div>
+
+          <!-- Biome 2 -->
+          <div class="biome-card" data-biome="sunset" id="biomeSunset">
+            <div class="biome-icon-header">
+              <span class="biome-emoji">🌅</span>
+              <span class="biome-levels-tag">Levels 26 - 50</span>
+            </div>
+            <h3 class="biome-title">Sunset Canyon</h3>
+            <p class="biome-desc">
+              Dusk skies, deep ravines, and crosswind challenges that test your suspension balance and speed trajectory.
+            </p>
+          </div>
+
+          <!-- Biome 3 -->
+          <div class="biome-card" data-biome="night" id="biomeNight">
+            <div class="biome-icon-header">
+              <span class="biome-emoji">🌃</span>
+              <span class="biome-levels-tag">Levels 51 - 75</span>
+            </div>
+            <h3 class="biome-title">Neon Night</h3>
+            <p class="biome-desc">
+              Electrifying dark-mode nightscapes with glowing track lines, floating spark particles, and precision jump gaps.
+            </p>
+          </div>
+
+          <!-- Biome 4 -->
+          <div class="biome-card" data-biome="magma" id="biomeMagma">
+            <div class="biome-icon-header">
+              <span class="biome-emoji">🌋</span>
+              <span class="biome-levels-tag">Levels 76 - 100+</span>
+            </div>
+            <h3 class="biome-title">Magma Volcano</h3>
+            <p class="biome-desc">
+              Molten lava lakes, spinning lethal red gear hazards, and high-stakes bridge drawing where one slip means total wipeout!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Feature Grid -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Why Players Love It</span>
+          <h2 class="section-title">Built For Endless Fun & Creativity</h2>
+          <p class="section-subtitle">
+            Combines tactile drawing mechanics, authentic physics simulations, and seamless cloud progression.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-app-card">
+            <div class="feature-icon-wrapper">📐</div>
+            <h3 class="feature-card-title">Real 2D Physics Engine</h3>
+            <p class="feature-card-desc">
+              Powered by Box2D / Forge2D physics. Feel genuine tire friction, body suspension spring, gravity inertia, and chassis torque as you race.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-app-card">
+            <div class="feature-icon-wrapper">🎨</div>
+            <h3 class="feature-card-title">Freeform Drawing Freedom</h3>
+            <p class="feature-card-desc">
+              No single fixed solution! Draw straight bridges, steep ramps, loop-de-loops, or protective roll cages to conquer each stage.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-app-card">
+            <div class="feature-icon-wrapper">☁️</div>
+            <h3 class="feature-card-title">Firebase Cloud Progress Sync</h3>
+            <p class="feature-card-desc">
+              Your hard-earned stars, unlocked levels, and high scores are backed up automatically to Firebase Firestore across devices.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-app-card">
+            <div class="feature-icon-wrapper">⚙️</div>
+            <h3 class="feature-card-title">Dynamic Hazards & Gears</h3>
+            <p class="feature-card-desc">
+              Navigate past motorized spinning gears, crumbling platform stones, and spike barriers that require perfect timing.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-app-card">
+            <div class="feature-icon-wrapper">✈️</div>
+            <h3 class="feature-card-title">100% Offline Playability</h3>
+            <p class="feature-card-desc">
+              No internet connection required to enjoy! Play on road trips, airplane flights, or subways with uninterrupted gameplay.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-app-card">
+            <div class="feature-icon-wrapper">🛡️</div>
+            <h3 class="feature-card-title">COPPA & Family Friendly</h3>
+            <p class="feature-card-desc">
+              Complies with strict Google Play Families policies. Only G-rated, non-personalized child-directed ads with zero invasive tracking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Family Safety & Privacy Spotlight Banner -->
+    <section class="section" id="safety">
+      <div class="container">
+        <div class="safety-spotlight-card">
+          <div>
+            <div class="safety-badge-badge">
+              <span>🛡️ Google Play Families Policy Compliant</span>
+            </div>
+            <h2 class="safety-title">Safe, Transparent & Privacy-First For All Ages</h2>
+            <p class="safety-desc">
+              We believe great mobile games should be delightful, creative, and completely safe for players of every age, especially children under 13.
+              We do not collect personal identifying information (PII) such as real names, home addresses, or phone numbers.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="/privacy" class="btn-primary" id="btnGoPrivacyPage">
+                <span>Read Full Privacy Policy</span>
+                <span aria-hidden="true">📜</span>
+              </a>
+              <button class="btn-secondary" data-open-modal="modalDataDeletion" id="btnOpenDataDeletionModal">
+                <span>Request Data Deletion</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <ul class="safety-checklist">
+              <li class="safety-check-item">
+                <span class="check-icon">✓</span>
+                <span><strong>COPPA Compliant:</strong> Zero personal data collection from minors</span>
+              </li>
+              <li class="safety-check-item">
+                <span class="check-icon">✓</span>
+                <span><strong>G-Rated Ads:</strong> TagForChildDirectedTreatment.yes enforced</span>
+              </li>
+              <li class="safety-check-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Anonymous Cloud Sync:</strong> Pseudonymous device keys only</span>
+              </li>
+              <li class="safety-check-item">
+                <span class="check-icon">✓</span>
+                <span><strong>GDPR & CCPA Compliant:</strong> Right to inspect, export, and delete data</span>
+              </li>
+              <li class="safety-check-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Parental Peace of Mind:</strong> No deceptive dark patterns or aggressive billing</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- In-Game Screenshots Gallery -->
+    <section class="section" id="screenshots">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Gameplay Showcase</span>
+          <h2 class="section-title">See Car Rush In Action</h2>
+          <p class="section-subtitle">
+            Take a look at the vibrant cartoon graphics, neon lines, and intense hazard traps waiting for you.
+          </p>
+        </div>
+
+        <div class="screenshot-grid">
+          <!-- Screenshot 1: Drawing Phase -->
+          <div class="screenshot-card">
+            <img src="/assets/images/screenshot_meadow.svg" alt="Car Rush Path Drawing Phase" loading="lazy">
+            <div class="screenshot-overlay-info">
+              <h3 class="screenshot-title">1. Path Drawing Phase</h3>
+              <p class="screenshot-caption">Draw glowing neon bridge lines within your ink budget. Tap Clear or DRIVE! when ready.</p>
+            </div>
+          </div>
+
+          <!-- Screenshot 2: Driving Phase -->
+          <div class="screenshot-card">
+            <img src="/assets/images/screenshot_lava.svg" alt="Car Rush Physics Driving Phase" loading="lazy">
+            <div class="screenshot-overlay-info">
+              <h3 class="screenshot-title">2. Gas &amp; Brake Physics</h3>
+              <p class="screenshot-caption">Control acceleration and braking to navigate past spinning saw gears and chasm hazards.</p>
+            </div>
+          </div>
+
+          <!-- Screenshot 3: Victory Phase -->
+          <div class="screenshot-card">
+            <img src="/assets/images/screenshot_victory.svg" alt="Car Rush 3-Star Victory Reward" loading="lazy">
+            <div class="screenshot-overlay-info">
+              <h3 class="screenshot-title">3. 3-Star Victory Celebration</h3>
+              <p class="screenshot-caption">Earn up to 3 stars based on ink efficiency and proceed to unlock the next challenging level!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Everything you need to know about gameplay, controls, cloud sync, and family safety.
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item open">
+            <div class="faq-header">
+              <span class="faq-question">How does the drawing mechanic work?</span>
+              <span class="faq-toggle-icon">✕</span>
+            </div>
+            <div class="faq-answer">
+              Simply touch or click anywhere on the screen and drag to draw a line bridge. Your line becomes an active, solid 2D rigid physics body that your toy car can drive across. Watch your ink bar at the top — drawing shorter, more clever bridges earns you a full 3-star rating!
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">Is the game free to play?</span>
+              <span class="faq-toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes! Car Rush: Draw & Drive is completely free to download and play. All levels can be unlocked naturally through gameplay and star progression without requiring any paywalls.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">How does Cloud Sync work?</span>
+              <span class="faq-toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              We use Firebase Firestore to sync your level completion and earned stars. A unique, anonymous pseudonymous device ID is assigned to your device on launch. When you are connected to Wi-Fi or mobile data, your progress syncs in real-time. If you are offline, all progress is cached locally and safely synced when reconnected.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">Is Car Rush safe for young children?</span>
+              <span class="faq-toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Absolutely. Car Rush: Draw & Drive is designed to be 100% family friendly and complies strictly with the Google Play Families Policy and the Children’s Online Privacy Protection Act (COPPA). We never collect names, photos, or personal messages. All advertisements served are restricted to G-rated content with child-directed flags enabled.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">How can I request my data to be deleted?</span>
+              <span class="faq-toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              You have complete ownership over your data. You can submit a deletion request anytime directly on this website using our <button style="background:none; border:none; color:var(--car-blue); text-decoration:underline; cursor:pointer;" data-open-modal="modalDataDeletion">Data Deletion Portal</button> or by emailing us at support@appstick.com.bd. All records tied to your device key will be permanently purged within 48 hours.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA Banner -->
+    <section class="section" id="download" style="padding-bottom: 80px;">
+      <div class="container">
+        <div style="background: radial-gradient(circle at top right, rgba(56, 182, 255, 0.25), transparent 70%), #111a2e; border: 1.5px solid var(--border-neon); border-radius: 8px; padding: 50px 30px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/app_icon.png" alt="Car Rush" style="width: 76px; height: 76px; border-radius: 8px; box-shadow: 0 10px 25px rgba(56,182,255,0.4); margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2);">
+          
+          <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 12px; color: #fff;">
+            Ready To Draw, Drive & Rush?
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 620px; margin: 0 auto 30px;">
+            Join thousands of happy players building bridges and conquering physics puzzles. Download Car Rush today for free!
+          </p>
+
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="https://play.google.com/store" target="_blank" rel="noopener" class="store-badge-card" style="background: #0b1120;">
+              <span class="store-badge-icon" aria-hidden="true">🤖</span>
+              <div class="store-badge-texts">
+                <span class="store-badge-caption">GET IT ON</span>
+                <span class="store-badge-platform">Google Play</span>
+              </div>
+            </a>
+
+            <a href="https://apple.com/app-store" target="_blank" rel="noopener" class="store-badge-card" style="background: #0b1120;">
+              <span class="store-badge-icon" aria-hidden="true">🍏</span>
+              <div class="store-badge-texts">
+                <span class="store-badge-caption">Download on the</span>
+                <span class="store-badge-platform">App Store</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BloodBank Style Footer (matching https://bloodbank.appstick.com.bd/) -->
+  <footer class="Footer-module__footer">
+    <div class="Footer-module__container">
+      <div class="Footer-module__footerGrid">
+        <!-- Brand Column -->
+        <div class="Footer-module__brandCol">
+          <a class="Footer-module__brandLogoWrap" href="/">
+            <div class="Footer-module__brandIconBox">
+              <img src="/assets/images/app_icon.png" alt="Car Rush Logo" loading="lazy">
+            </div>
+            <div>
+              <span class="Footer-module__brandTitle">CAR <span class="Footer-module__crimsonAccent">RUSH</span></span>
+              <p class="Footer-module__brandSub">Draw &amp; Drive. Rush to Victory.</p>
+            </div>
+          </a>
+          <p class="Footer-module__brandDesc">
+            The intelligent 2D physics puzzle path-drawing casual mobile game. Connecting creative engineering with dynamic Forge2D physics, 200 progressive levels across 16 dynamic biomes, and family-safe entertainment.
+          </p>
+        </div>
+
+        <!-- Solutions & Gameplay Column -->
+        <div>
+          <h4 class="Footer-module__colTitle">Gameplay &amp; Solutions</h4>
+          <ul class="Footer-module__linkList">
+            <li><a class="Footer-module__footerLink" href="#simulator">Path-Drawing Sandbox</a></li>
+            <li><a class="Footer-module__footerLink" href="#biomes">16 Dynamic Biomes</a></li>
+            <li><a class="Footer-module__footerLink" href="#features">200 Handcrafted Levels</a></li>
+            <li><a class="Footer-module__footerLink" href="#features">Gas &amp; Brake Physics</a></li>
+            <li><a class="Footer-module__footerLink" href="#features">Firebase Cloud Sync</a></li>
+            <li><a class="Footer-module__footerLink" href="#safety">100% Family Safe &amp; Offline</a></li>
+          </ul>
+        </div>
+
+        <!-- Privacy & Legal Column -->
+        <div>
+          <h4 class="Footer-module__colTitle">Privacy &amp; Resources</h4>
+          <ul class="Footer-module__linkList">
+            <li><a class="Footer-module__footerLink Footer-module__highlightLink" href="/privacy">Privacy Policy (COPPA)</a></li>
+            <li><a class="Footer-module__footerLink" href="/terms">Terms of Service &amp; EULA</a></li>
+            <li><a class="Footer-module__footerLink" href="#" data-open-modal="modalDataDeletion">Data Deletion Portal</a></li>
+            <li><a class="Footer-module__footerLink" href="/privacy#admob">Google Play Families Policy</a></li>
+            <li><a class="Footer-module__footerLink" href="/privacy#coppa">Children's Privacy Protection</a></li>
+            <li><a class="Footer-module__footerLink" href="#" data-open-modal="modalContact">Developer Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="Footer-module__bottomBar">
+        <p class="Footer-module__copyrightText">© 2026 Car Rush: Draw &amp; Drive. All rights reserved.</p>
+        <div class="Footer-module__legalLinksWrap">
+          <a class="Footer-module__legalLink" href="/privacy">Privacy Policy</a>
+          <span class="Footer-module__dotSep">•</span>
+          <a class="Footer-module__legalLink" href="/terms">Terms of Service</a>
+        </div>
+        <div class="Footer-module__poweredByWrap">
+          <span>Powered by</span>
+          <a href="https://appstick.com.bd" target="_blank" rel="noopener noreferrer" class="Footer-module__poweredByLink">Appstick</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Native Mobile Bottom App Dock -->
+  <nav class="mobile-app-dock" aria-label="Mobile Navigation Dock">
+    <div class="dock-grid">
+      <a href="#hero" class="dock-item active" id="dockNavHome">
+        <span class="dock-icon" aria-hidden="true">🏠</span>
+        <span>Home</span>
+      </a>
+      <a href="#simulator" class="dock-item" id="dockNavPlay">
+        <span class="dock-icon" aria-hidden="true">🎮</span>
+        <span>Demo</span>
+      </a>
+      <a href="#biomes" class="dock-item" id="dockNavBiomes">
+        <span class="dock-icon" aria-hidden="true">🌍</span>
+        <span>Biomes</span>
+      </a>
+      <a href="/privacy" class="dock-item" id="dockNavPrivacy">
+        <span class="dock-icon" aria-hidden="true">🛡️</span>
+        <span>Privacy</span>
+      </a>
+      <a href="#download" class="dock-item dock-cta" id="dockNavGet">
+        <span class="dock-icon" aria-hidden="true">⬇️</span>
+        <span>Get</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ======================================================================
+       Interactive Modals
+       ====================================================================== -->
+
+  <!-- Modal 1: Data Deletion Request (Required by Google Play & Apple Store) -->
+  <div class="modal-backdrop" id="modalDataDeletion" role="dialog" aria-modal="true" aria-labelledby="delTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close Modal">✕</button>
+      <h3 class="modal-title" id="delTitle">🗑️ Data Deletion Request</h3>
+      <p class="modal-subtitle">
+        In compliance with Google Play Store Policies and GDPR, you have the right to request the permanent deletion of your game records.
+      </p>
+
+      <form id="dataDeletionForm">
+        <div class="form-group">
+          <label class="form-label" for="deletionDeviceId">Anonymous Device ID (Optional if Email provided)</label>
+          <input type="text" id="deletionDeviceId" class="form-input" placeholder="e.g. 8f4b-22da-9c12 or found in app settings">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="deletionEmail">Your Contact Email Address</label>
+          <input type="email" id="deletionEmail" class="form-input" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="deletionReason">Reason for Deletion (Optional)</label>
+          <textarea id="deletionReason" class="form-textarea" placeholder="Let us know why you would like your record removed..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+          Submit Deletion Request
+        </button>
+
+        <div id="deletionAlert" class="modal-feedback-alert"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: Contact / Support Form -->
+  <div class="modal-backdrop" id="modalContact" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close Modal">✕</button>
+      <h3 class="modal-title" id="contactTitle">✉️ Contact Support</h3>
+      <p class="modal-subtitle">Have feedback, questions, or need game assistance? We're here to help!</p>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <label class="form-label" for="contactName">Your Name</label>
+          <input type="text" id="contactName" class="form-input" placeholder="Alex" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactEmail">Email Address</label>
+          <input type="email" id="contactEmail" class="form-input" placeholder="alex@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactSubject">Subject</label>
+          <input type="text" id="contactSubject" class="form-input" placeholder="Feedback or Question" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactMessage">Message</label>
+          <textarea id="contactMessage" class="form-textarea" placeholder="Tell us what's on your mind..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+          Send Message
+        </button>
+
+        <div id="contactAlert" class="modal-feedback-alert"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/game-preview.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

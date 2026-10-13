@@ -1,0 +1,22 @@
+{
+  "name": "car-rush-landing-page",
+  "version": "1.0.0",
+  "description": "App-style Landing Page and Privacy Policy for Car Rush: Draw & Drive",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "car-rush",
+    "flutter-game",
+    "landing-page",
+    "privacy-policy",
+    "physics-game"
+  ],
+  "author": "Appstick Ltd",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

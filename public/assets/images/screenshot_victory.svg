@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" width="720" height="1280">
+  <defs>
+    <!-- Background Scene (Translucent Meadow) -->
+    <linearGradient id="vicSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A90E2"/>
+      <stop offset="100%" stop-color="#1E3C72"/>
+    </linearGradient>
+
+    <!-- Card Background with Frosted Glass Look -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Star Glow -->
+    <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="b1"/>
+      <feMerge>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 1. Background Scene with Translucent Dim Overlay -->
+  <rect width="720" height="1280" fill="url(#vicSky)"/>
+  <rect width="720" height="1280" fill="#000000" opacity="0.6"/>
+
+  <!-- Falling Confetti Pieces -->
+  <g opacity="0.9">
+    <rect x="80" y="240" width="16" height="10" fill="#00F5D4" transform="rotate(25 80 240)"/>
+    <rect x="180" y="160" width="14" height="14" fill="#FFD166" transform="rotate(-15 180 160)"/>
+    <rect x="290" y="280" width="18" height="8" fill="#4ADE80" transform="rotate(45 290 280)"/>
+    <rect x="420" y="190" width="12" height="16" fill="#38B6FF" transform="rotate(-30 420 190)"/>
+    <rect x="540" y="260" width="16" height="12" fill="#F97316" transform="rotate(60 540 260)"/>
+    <rect x="630" y="170" width="14" height="14" fill="#E879F9" transform="rotate(10 630 170)"/>
+
+    <rect x="100" y="980" width="16" height="10" fill="#4ADE80" transform="rotate(-25 100 980)"/>
+    <rect x="240" y="1040" width="14" height="14" fill="#FFD166" transform="rotate(35 240 1040)"/>
+    <rect x="480" y="990" width="18" height="10" fill="#38B6FF" transform="rotate(-40 480 990)"/>
+    <rect x="610" y="1060" width="14" height="14" fill="#F97316" transform="rotate(15 610 1060)"/>
+  </g>
+
+  <!-- 2. FLUTTER VICTORY REWARD CARD (Exact VictoryDialog Widget) -->
+  <g transform="translate(360, 580)">
+    <!-- Card Base -->
+    <rect x="-270" y="-320" width="540" height="540" rx="42" fill="url(#cardGrad)" stroke="#38BDF8" stroke-width="3" stroke-opacity="0.4"/>
+    <rect x="-264" y="-314" width="528" height="528" rx="38" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.1"/>
+
+    <!-- Victory Banner Header -->
+    <rect x="-180" y="-345" width="360" height="66" rx="33" fill="#22C55E" stroke="#86EFAC" stroke-width="3"/>
+    <text x="0" y="-302" font-family="'Fredoka', sans-serif" font-size="36" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">VICTORY!</text>
+
+    <!-- 3 Animated Gold Stars -->
+    <g transform="translate(0, -180)">
+      <!-- Left Star -->
+      <g transform="translate(-110, 10) rotate(-12)" filter="url(#goldGlow)">
+        <polygon points="0,-42 12,-12 44,-10 20,12 28,42 0,24 -28,42 -20,12 -44,-10 -12,-12" fill="#FFD166"/>
+        <polygon points="0,-36 9,-10 36,-8 16,10 22,34 0,20 -22,34 -16,10 -36,-8 -9,-10" fill="#FFEAA7"/>
+      </g>
+      <!-- Center Star (Larger) -->
+      <g transform="translate(0, -14)" filter="url(#goldGlow)">
+        <polygon points="0,-54 16,-16 56,-14 26,16 36,54 0,32 -36,54 -26,16 -56,-14 -16,-16" fill="#FFD166"/>
+        <polygon points="0,-46 12,-12 46,-10 20,14 28,44 0,26 -28,44 -20,14 -46,-10 -12,-12" fill="#FFEAA7"/>
+      </g>
+      <!-- Right Star -->
+      <g transform="translate(110, 10) rotate(12)" filter="url(#goldGlow)">
+        <polygon points="0,-42 12,-12 44,-10 20,12 28,42 0,24 -28,42 -20,12 -44,-10 -12,-12" fill="#FFD166"/>
+        <polygon points="0,-36 9,-10 36,-8 16,10 22,34 0,20 -22,34 -16,10 -36,-8 -9,-10" fill="#FFEAA7"/>
+      </g>
+    </g>
+
+    <!-- Level Cleared Text -->
+    <text x="0" y="-60" font-family="'Fredoka', sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">Level 1 Cleared!</text>
+    <text x="0" y="-20" font-family="'Outfit', sans-serif" font-size="18" font-weight="500" fill="#94A3B8" text-anchor="middle">Ink Efficiency Score: 88%</text>
+
+    <!-- Ink Score Stat Pill -->
+    <rect x="-140" y="10" width="280" height="42" rx="21" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+    <text x="0" y="37" font-family="'Fredoka', sans-serif" font-size="18" font-weight="600" fill="#4ADE80" text-anchor="middle">★ ★ ★ 3 Stars Earned</text>
+
+    <!-- 3. ACTION BUTTONS: "Replay" & "Next Level" -->
+    <g transform="translate(0, 120)">
+      <!-- Replay Button -->
+      <g transform="translate(-130, 0)">
+        <rect x="-85" y="-30" width="170" height="60" rx="30" fill="#C2410C"/>
+        <rect x="-85" y="-36" width="170" height="60" rx="30" fill="#F97316"/>
+        <text x="0" y="2" font-family="'Fredoka', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">🔄 Replay</text>
+      </g>
+      <!-- Next Level Button -->
+      <g transform="translate(130, 0)">
+        <rect x="-85" y="-30" width="170" height="60" rx="30" fill="#15803D"/>
+        <rect x="-85" y="-36" width="170" height="60" rx="30" fill="#22C55E"/>
+        <text x="0" y="2" font-family="'Fredoka', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">Next Level ➔</text>
+      </g>
+    </g>
+  </g>
+</svg>

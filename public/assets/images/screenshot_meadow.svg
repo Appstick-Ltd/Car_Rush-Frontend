@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" width="720" height="1280">
+  <defs>
+    <!-- Sky Gradient matching BiomeTheme.grassland -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="60%" stop-color="#B5E8F7"/>
+      <stop offset="100%" stop-color="#FFD6E0"/>
+    </linearGradient>
+
+    <!-- Rock Body Gradient -->
+    <linearGradient id="rockGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5E3C"/>
+      <stop offset="100%" stop-color="#4A2810"/>
+    </linearGradient>
+
+    <!-- Neon Green Line Glow -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="16" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Ink Fluid Gradient -->
+    <linearGradient id="inkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="100%" stop-color="#4ADE80"/>
+    </linearGradient>
+
+    <!-- Car Body Gradient -->
+    <linearGradient id="carBodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#70D6FF"/>
+      <stop offset="40%" stop-color="#38B6FF"/>
+      <stop offset="100%" stop-color="#0072C6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Background Sky -->
+  <rect width="720" height="1280" fill="url(#skyGrad)"/>
+
+  <!-- Distant Mountains -->
+  <polygon points="0,780 140,580 320,820" fill="#90C5E7" opacity="0.6"/>
+  <polygon points="120,600 140,580 170,620 150,610 135,625" fill="#FFFFFF" opacity="0.8"/>
+  <polygon points="260,820 460,540 680,820" fill="#7DBAE0" opacity="0.6"/>
+  <polygon points="430,570 460,540 500,590 480,580 455,595" fill="#FFFFFF" opacity="0.8"/>
+
+  <!-- Sun -->
+  <circle cx="610" cy="180" r="55" fill="#FFF3B0" opacity="0.9"/>
+  <circle cx="610" cy="180" r="75" fill="#FFF3B0" opacity="0.3"/>
+
+  <!-- Fluffy Drifting Clouds -->
+  <g fill="#FFFFFF" opacity="0.85">
+    <ellipse cx="140" cy="220" rx="60" ry="30"/>
+    <ellipse cx="190" cy="205" rx="45" ry="35"/>
+    <ellipse cx="90" cy="225" rx="40" ry="25"/>
+
+    <ellipse cx="480" cy="280" rx="75" ry="32"/>
+    <ellipse cx="530" cy="265" rx="55" ry="40"/>
+    <ellipse cx="430" cy="285" rx="45" ry="28"/>
+  </g>
+
+  <!-- 2. Platforms (Cliffs) -->
+  <!-- Left Cliff -->
+  <path d="M 0,820 L 190,820 L 190,1280 L 0,1280 Z" fill="url(#rockGrad)"/>
+  <!-- Scalloped Grass Top -->
+  <path d="M 0,820 L 190,820 L 190,845 Q 160,855 130,845 Q 100,855 70,845 Q 35,855 0,845 Z" fill="#2ECC71"/>
+  <rect x="0" y="820" width="190" height="8" fill="#55E892"/>
+
+  <!-- Right Cliff with Finish Flag -->
+  <path d="M 530,820 L 720,820 L 720,1280 L 530,1280 Z" fill="url(#rockGrad)"/>
+  <path d="M 530,820 L 720,820 L 720,845 Q 685,855 650,845 Q 615,855 580,845 Q 555,855 530,845 Z" fill="#2ECC71"/>
+  <rect x="530" y="820" width="190" height="8" fill="#55E892"/>
+
+  <!-- Finish Flag -->
+  <g transform="translate(610, 715)">
+    <rect x="0" y="0" width="8" height="105" rx="3" fill="#E2E8F0"/>
+    <!-- Checkered Flag Banner -->
+    <g transform="translate(8, 0)">
+      <rect x="0" y="0" width="60" height="40" fill="#0F172A"/>
+      <rect x="0" y="0" width="15" height="10" fill="#FFFFFF"/>
+      <rect x="30" y="0" width="15" height="10" fill="#FFFFFF"/>
+      <rect x="15" y="10" width="15" height="10" fill="#FFFFFF"/>
+      <rect x="45" y="10" width="15" height="10" fill="#FFFFFF"/>
+      <rect x="0" y="20" width="15" height="10" fill="#FFFFFF"/>
+      <rect x="30" y="20" width="15" height="10" fill="#FFFFFF"/>
+      <rect x="15" y="30" width="15" height="10" fill="#FFFFFF"/>
+      <rect x="45" y="30" width="15" height="10" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- 3. Hand-Drawn Glowing Neon Bridge Path -->
+  <!-- Outer Glow -->
+  <path d="M 165,825 C 240,780 320,680 400,680 C 470,680 520,770 560,825"
+        fill="none" stroke="#4ADE80" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"
+        opacity="0.35" filter="url(#neonGlow)"/>
+  <!-- Core Neon Line -->
+  <path d="M 165,825 C 240,780 320,680 400,680 C 470,680 520,770 560,825"
+        fill="none" stroke="#4ADE80" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Inner White Highlight Core -->
+  <path d="M 165,825 C 240,780 320,680 400,680 C 470,680 520,770 560,825"
+        fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 4. Cute Blue Toy Car (#7) on Starting Platform -->
+  <g transform="translate(100, 770)">
+    <!-- Car Body -->
+    <rect x="-48" y="-24" width="96" height="44" rx="16" fill="url(#carBodyGrad)"/>
+    <rect x="-45" y="-22" width="90" height="20" rx="10" fill="#70D6FF" opacity="0.6"/>
+
+    <!-- Cabin / Windshield -->
+    <path d="M -22,-24 L -10,-46 Q 0,-48 24,-46 L 36,-24 Z" fill="#E0F2FE"/>
+    <path d="M -18,-24 L -8,-42 Q 0,-44 20,-42 L 30,-24 Z" fill="#FFFFFF" opacity="0.7"/>
+
+    <!-- Yellow Roof Hat -->
+    <rect x="-12" y="-52" width="38" height="10" rx="4" fill="#FFD166"/>
+    <rect x="-8" y="-50" width="30" height="4" rx="2" fill="#FFEAA7"/>
+
+    <!-- Big Expressive Cartoon Eyes -->
+    <circle cx="10" cy="-34" r="8" fill="#FFFFFF"/>
+    <circle cx="12" cy="-34" r="4.5" fill="#0F172A"/>
+    <circle cx="14" cy="-36" r="2" fill="#FFFFFF"/>
+
+    <circle cx="28" cy="-34" r="8" fill="#FFFFFF"/>
+    <circle cx="30" cy="-34" r="4.5" fill="#0F172A"/>
+    <circle cx="32" cy="-36" r="2" fill="#FFFFFF"/>
+
+    <!-- White Door Stripe & Number 7 -->
+    <circle cx="-14" cy="-2" r="14" fill="#FFFFFF"/>
+    <text x="-14" y="4" font-family="'Fredoka', sans-serif" font-size="16" font-weight="900" fill="#0072C6" text-anchor="middle">7</text>
+
+    <!-- Front Headlight -->
+    <ellipse cx="46" cy="-2" rx="4" ry="7" fill="#FFF275"/>
+
+    <!-- Monster Wheels -->
+    <!-- Rear Wheel -->
+    <g transform="translate(-28, 20)">
+      <circle cx="0" cy="0" r="18" fill="#1E293B"/>
+      <circle cx="0" cy="0" r="11" fill="#94A3B8"/>
+      <circle cx="0" cy="0" r="5" fill="#38B6FF"/>
+      <circle cx="0" cy="0" r="2" fill="#FFFFFF"/>
+    </g>
+    <!-- Front Wheel -->
+    <g transform="translate(28, 20)">
+      <circle cx="0" cy="0" r="18" fill="#1E293B"/>
+      <circle cx="0" cy="0" r="11" fill="#94A3B8"/>
+      <circle cx="0" cy="0" r="5" fill="#38B6FF"/>
+      <circle cx="0" cy="0" r="2" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- 5. REAL FLUTTER HUD (Drawing Phase) -->
+  <!-- Top Left: Home Button -->
+  <g transform="translate(36, 50)">
+    <circle cx="26" cy="26" r="26" fill="#334155" opacity="0.3"/>
+    <circle cx="26" cy="23" r="26" fill="#475569"/>
+    <!-- Home Icon -->
+    <path d="M 16,27 L 26,17 L 36,27 L 36,33 Q 36,34 35,34 L 17,34 Q 16,34 16,33 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Top Center: Level Badge & Ink Capsule -->
+  <g transform="translate(360, 60)">
+    <!-- Level Title Pill -->
+    <rect x="-130" y="-15" width="260" height="34" rx="17" fill="#1E293B" opacity="0.85"/>
+    <text x="0" y="8" font-family="'Fredoka', sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">Level 1: First Steps</text>
+
+    <!-- Ink Capsule Meter -->
+    <g transform="translate(0, 32)">
+      <!-- Capsule Shell -->
+      <rect x="-120" y="0" width="240" height="24" rx="12" fill="#0F172A" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2"/>
+      <!-- Fluid Fill (78% remaining) -->
+      <rect x="-116" y="4" width="180" height="16" rx="8" fill="url(#inkGrad)"/>
+      <!-- Glass Glint Highlight -->
+      <rect x="-112" y="5" width="170" height="4" rx="2" fill="#FFFFFF" opacity="0.5"/>
+      <!-- Label -->
+      <text x="-95" y="16" font-family="'Outfit', sans-serif" font-size="11" font-weight="800" fill="#0A2A1A">INK 78%</text>
+    </g>
+  </g>
+
+  <!-- Bottom HUD: Clear Button & DRIVE! Button -->
+  <!-- Bottom-Left: Cartoon Clear Button -->
+  <g transform="translate(36, 1160)">
+    <rect x="0" y="6" width="140" height="60" rx="22" fill="#C2410C"/>
+    <rect x="0" y="0" width="140" height="60" rx="22" fill="#F97316"/>
+    <!-- Trash Can Icon -->
+    <g transform="translate(26, 18)" fill="#FFFFFF">
+      <path d="M 6,8 L 18,8 L 18,22 Q 18,24 16,24 L 8,24 Q 6,24 6,22 Z"/>
+      <rect x="3" y="4" width="18" height="3" rx="1.5"/>
+    </g>
+    <text x="82" y="38" font-family="'Fredoka', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">Clear</text>
+  </g>
+
+  <!-- Bottom-Right: Big Cartoon DRIVE! Button -->
+  <g transform="translate(480, 1146)">
+    <!-- 3D Shadow -->
+    <rect x="0" y="8" width="204" height="74" rx="26" fill="#15803D"/>
+    <!-- Main Button Face -->
+    <rect x="0" y="0" width="204" height="74" rx="26" fill="#22C55E"/>
+    <!-- Top Bevel Highlight -->
+    <rect x="8" y="4" width="188" height="20" rx="10" fill="#FFFFFF" opacity="0.3"/>
+    
+    <text x="102" y="48" font-family="'Fredoka', sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">DRIVE! 🏁</text>
+  </g>
+</svg>
