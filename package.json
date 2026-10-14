@@ -14,7 +14,7 @@
     "privacy-policy",
     "physics-game"
   ],
-  "author": "Appstick Ltd",
+  "author": "Appstick",
   "license": "MIT",
   "dependencies": {
     "express": "^4.21.2"

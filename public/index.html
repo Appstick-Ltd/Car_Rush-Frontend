@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Car Rush: Draw & Drive — Official Mobile Game & Community</title>
-  <meta name="description" content="Car Rush: Draw & Drive is a thrilling 2D physics path-drawing casual mobile game. Draw glowing bridges with your finger to guide your toy car across chasms and hazards to the finish line!">
-  <meta name="keywords" content="Car Rush, Draw and Drive, physics puzzle game, mobile casual game, Flutter game, Flame Forge2D, kid friendly games, family games, Google Play">
+  <meta name="description"
+    content="Car Rush: Draw & Drive is a thrilling 2D physics path-drawing casual mobile game. Draw glowing bridges with your finger to guide your toy car across chasms and hazards to the finish line!">
+  <meta name="keywords"
+    content="Car Rush, Draw and Drive, physics puzzle game, mobile casual game, Flutter game, Flame Forge2D, kid friendly games, family games, Google Play">
   <meta name="theme-color" content="#0a0e17">
 
   <!-- OpenGraph / Social Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Car Rush: Draw & Drive — Mobile Physics Casual Game">
-  <meta property="og:description" content="Draw bridges, dodge hazards, and rush to victory! Built with Flame Forge2D physics.">
+  <meta property="og:description"
+    content="Draw bridges, dodge hazards, and rush to victory! Built with Flame Forge2D physics.">
   <meta property="og:image" content="/assets/images/hero_banner.jpg">
 
   <!-- Favicon -->
@@ -21,6 +25,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/style.css?v=2">
 </head>
+
 <body data-biome="meadow">
 
   <!-- Ambient Glowing Background Blobs -->
@@ -54,7 +59,8 @@
       </nav>
 
       <div class="Navbar-module__rightWrap">
-        <button class="Navbar-module__audioBtn active" id="audioToggleBtn" title="Sound Effects On/Off" aria-label="Toggle Sound Effects">
+        <button class="Navbar-module__audioBtn active" id="audioToggleBtn" title="Sound Effects On/Off"
+          aria-label="Toggle Sound Effects">
           🔊
         </button>
         <a href="#download" class="Navbar-module__btnDownload" id="btnHeaderDownload">
@@ -77,8 +83,8 @@
           </h1>
 
           <p class="hero-description">
-            Unleash your creativity in the ultimate 2D physics puzzle racing adventure! 
-            Draw glowing neon lines with your finger to build sturdy bridges, bypass perilous spike pits, 
+            Unleash your creativity in the ultimate 2D physics puzzle racing adventure!
+            Draw glowing neon lines with your finger to build sturdy bridges, bypass perilous spike pits,
             avoid fiery magma lakes, and guide your adorable toy race car safely to the checkered finish flag.
           </p>
 
@@ -187,12 +193,14 @@
 
               <!-- View 2: Meadow Drawing Screenshot -->
               <div class="simulator-view" id="simView-meadow">
-                <img src="/assets/images/screenshot_meadow.svg" alt="Authentic Drawing Phase Gameplay" class="sim-screenshot-img">
+                <img src="/assets/images/screenshot_meadow.svg" alt="Authentic Drawing Phase Gameplay"
+                  class="sim-screenshot-img">
               </div>
 
               <!-- View 3: Magma Driving Screenshot -->
               <div class="simulator-view" id="simView-lava">
-                <img src="/assets/images/screenshot_lava.svg" alt="Authentic Driving Phase Gameplay" class="sim-screenshot-img">
+                <img src="/assets/images/screenshot_lava.svg" alt="Authentic Driving Phase Gameplay"
+                  class="sim-screenshot-img">
               </div>
             </div>
           </div>
@@ -220,7 +228,8 @@
             </div>
             <h3 class="biome-title">Sunny Meadow</h3>
             <p class="biome-desc">
-              Gentle grassy cliffs, drifting clouds, and golden star pickups. The perfect proving ground for aspiring bridge engineers!
+              Gentle grassy cliffs, drifting clouds, and golden star pickups. The perfect proving ground for aspiring
+              bridge engineers!
             </p>
           </div>
 
@@ -244,7 +253,8 @@
             </div>
             <h3 class="biome-title">Neon Night</h3>
             <p class="biome-desc">
-              Electrifying dark-mode nightscapes with glowing track lines, floating spark particles, and precision jump gaps.
+              Electrifying dark-mode nightscapes with glowing track lines, floating spark particles, and precision jump
+              gaps.
             </p>
           </div>
 
@@ -256,7 +266,8 @@
             </div>
             <h3 class="biome-title">Magma Volcano</h3>
             <p class="biome-desc">
-              Molten lava lakes, spinning lethal red gear hazards, and high-stakes bridge drawing where one slip means total wipeout!
+              Molten lava lakes, spinning lethal red gear hazards, and high-stakes bridge drawing where one slip means
+              total wipeout!
             </p>
           </div>
         </div>
@@ -280,7 +291,8 @@
             <div class="feature-icon-wrapper">📐</div>
             <h3 class="feature-card-title">Real 2D Physics Engine</h3>
             <p class="feature-card-desc">
-              Powered by Box2D / Forge2D physics. Feel genuine tire friction, body suspension spring, gravity inertia, and chassis torque as you race.
+              Powered by Box2D / Forge2D physics. Feel genuine tire friction, body suspension spring, gravity inertia,
+              and chassis torque as you race.
             </p>
           </div>
 
@@ -289,7 +301,8 @@
             <div class="feature-icon-wrapper">🎨</div>
             <h3 class="feature-card-title">Freeform Drawing Freedom</h3>
             <p class="feature-card-desc">
-              No single fixed solution! Draw straight bridges, steep ramps, loop-de-loops, or protective roll cages to conquer each stage.
+              No single fixed solution! Draw straight bridges, steep ramps, loop-de-loops, or protective roll cages to
+              conquer each stage.
             </p>
           </div>
 
@@ -298,7 +311,8 @@
             <div class="feature-icon-wrapper">☁️</div>
             <h3 class="feature-card-title">Firebase Cloud Progress Sync</h3>
             <p class="feature-card-desc">
-              Your hard-earned stars, unlocked levels, and high scores are backed up automatically to Firebase Firestore across devices.
+              Your hard-earned stars, unlocked levels, and high scores are backed up automatically to Firebase Firestore
+              across devices.
             </p>
           </div>
 
@@ -307,7 +321,8 @@
             <div class="feature-icon-wrapper">⚙️</div>
             <h3 class="feature-card-title">Dynamic Hazards & Gears</h3>
             <p class="feature-card-desc">
-              Navigate past motorized spinning gears, crumbling platform stones, and spike barriers that require perfect timing.
+              Navigate past motorized spinning gears, crumbling platform stones, and spike barriers that require perfect
+              timing.
             </p>
           </div>
 
@@ -316,7 +331,8 @@
             <div class="feature-icon-wrapper">✈️</div>
             <h3 class="feature-card-title">100% Offline Playability</h3>
             <p class="feature-card-desc">
-              No internet connection required to enjoy! Play on road trips, airplane flights, or subways with uninterrupted gameplay.
+              No internet connection required to enjoy! Play on road trips, airplane flights, or subways with
+              uninterrupted gameplay.
             </p>
           </div>
 
@@ -325,7 +341,8 @@
             <div class="feature-icon-wrapper">🛡️</div>
             <h3 class="feature-card-title">COPPA & Family Friendly</h3>
             <p class="feature-card-desc">
-              Complies with strict Google Play Families policies. Only G-rated, non-personalized child-directed ads with zero invasive tracking.
+              Complies with strict Google Play Families policies. Only G-rated, non-personalized child-directed ads with
+              zero invasive tracking.
             </p>
           </div>
         </div>
@@ -342,8 +359,10 @@
             </div>
             <h2 class="safety-title">Safe, Transparent & Privacy-First For All Ages</h2>
             <p class="safety-desc">
-              We believe great mobile games should be delightful, creative, and completely safe for players of every age, especially children under 13.
-              We do not collect personal identifying information (PII) such as real names, home addresses, or phone numbers.
+              We believe great mobile games should be delightful, creative, and completely safe for players of every
+              age, especially children under 13.
+              We do not collect personal identifying information (PII) such as real names, home addresses, or phone
+              numbers.
             </p>
             <div style="display: flex; gap: 14px; flex-wrap: wrap;">
               <a href="/privacy" class="btn-primary" id="btnGoPrivacyPage">
@@ -401,7 +420,8 @@
             <img src="/assets/images/screenshot_meadow.svg" alt="Car Rush Path Drawing Phase" loading="lazy">
             <div class="screenshot-overlay-info">
               <h3 class="screenshot-title">1. Path Drawing Phase</h3>
-              <p class="screenshot-caption">Draw glowing neon bridge lines within your ink budget. Tap Clear or DRIVE! when ready.</p>
+              <p class="screenshot-caption">Draw glowing neon bridge lines within your ink budget. Tap Clear or DRIVE!
+                when ready.</p>
             </div>
           </div>
 
@@ -410,7 +430,8 @@
             <img src="/assets/images/screenshot_lava.svg" alt="Car Rush Physics Driving Phase" loading="lazy">
             <div class="screenshot-overlay-info">
               <h3 class="screenshot-title">2. Gas &amp; Brake Physics</h3>
-              <p class="screenshot-caption">Control acceleration and braking to navigate past spinning saw gears and chasm hazards.</p>
+              <p class="screenshot-caption">Control acceleration and braking to navigate past spinning saw gears and
+                chasm hazards.</p>
             </div>
           </div>
 
@@ -419,7 +440,8 @@
             <img src="/assets/images/screenshot_victory.svg" alt="Car Rush 3-Star Victory Reward" loading="lazy">
             <div class="screenshot-overlay-info">
               <h3 class="screenshot-title">3. 3-Star Victory Celebration</h3>
-              <p class="screenshot-caption">Earn up to 3 stars based on ink efficiency and proceed to unlock the next challenging level!</p>
+              <p class="screenshot-caption">Earn up to 3 stars based on ink efficiency and proceed to unlock the next
+                challenging level!</p>
             </div>
           </div>
         </div>
@@ -445,7 +467,9 @@
               <span class="faq-toggle-icon">✕</span>
             </div>
             <div class="faq-answer">
-              Simply touch or click anywhere on the screen and drag to draw a line bridge. Your line becomes an active, solid 2D rigid physics body that your toy car can drive across. Watch your ink bar at the top — drawing shorter, more clever bridges earns you a full 3-star rating!
+              Simply touch or click anywhere on the screen and drag to draw a line bridge. Your line becomes an active,
+              solid 2D rigid physics body that your toy car can drive across. Watch your ink bar at the top — drawing
+              shorter, more clever bridges earns you a full 3-star rating!
             </div>
           </div>
 
@@ -456,7 +480,8 @@
               <span class="faq-toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              Yes! Car Rush: Draw & Drive is completely free to download and play. All levels can be unlocked naturally through gameplay and star progression without requiring any paywalls.
+              Yes! Car Rush: Draw & Drive is completely free to download and play. All levels can be unlocked naturally
+              through gameplay and star progression without requiring any paywalls.
             </div>
           </div>
 
@@ -467,7 +492,10 @@
               <span class="faq-toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              We use Firebase Firestore to sync your level completion and earned stars. A unique, anonymous pseudonymous device ID is assigned to your device on launch. When you are connected to Wi-Fi or mobile data, your progress syncs in real-time. If you are offline, all progress is cached locally and safely synced when reconnected.
+              We use Firebase Firestore to sync your level completion and earned stars. A unique, anonymous pseudonymous
+              device ID is assigned to your device on launch. When you are connected to Wi-Fi or mobile data, your
+              progress syncs in real-time. If you are offline, all progress is cached locally and safely synced when
+              reconnected.
             </div>
           </div>
 
@@ -478,7 +506,10 @@
               <span class="faq-toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              Absolutely. Car Rush: Draw & Drive is designed to be 100% family friendly and complies strictly with the Google Play Families Policy and the Children’s Online Privacy Protection Act (COPPA). We never collect names, photos, or personal messages. All advertisements served are restricted to G-rated content with child-directed flags enabled.
+              Absolutely. Car Rush: Draw & Drive is designed to be 100% family friendly and complies strictly with the
+              Google Play Families Policy and the Children’s Online Privacy Protection Act (COPPA). We never collect
+              names, photos, or personal messages. All advertisements served are restricted to G-rated content with
+              child-directed flags enabled.
             </div>
           </div>
 
@@ -489,7 +520,11 @@
               <span class="faq-toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              You have complete ownership over your data. You can submit a deletion request anytime directly on this website using our <button style="background:none; border:none; color:var(--car-blue); text-decoration:underline; cursor:pointer;" data-open-modal="modalDataDeletion">Data Deletion Portal</button> or by emailing us at support@appstick.com.bd. All records tied to your device key will be permanently purged within 48 hours.
+              You have complete ownership over your data. You can submit a deletion request anytime directly on this
+              website using our <button
+                style="background:none; border:none; color:var(--car-blue); text-decoration:underline; cursor:pointer;"
+                data-open-modal="modalDataDeletion">Data Deletion Portal</button> or by emailing us at
+              info@appstick.com.bd. All records tied to your device key will be permanently purged within 48 hours.
             </div>
           </div>
         </div>
@@ -499,18 +534,23 @@
     <!-- Download CTA Banner -->
     <section class="section" id="download" style="padding-bottom: 80px;">
       <div class="container">
-        <div style="background: radial-gradient(circle at top right, rgba(56, 182, 255, 0.25), transparent 70%), #111a2e; border: 1.5px solid var(--border-neon); border-radius: 8px; padding: 50px 30px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);">
-          <img src="/assets/images/app_icon.png" alt="Car Rush" style="width: 76px; height: 76px; border-radius: 8px; box-shadow: 0 10px 25px rgba(56,182,255,0.4); margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2);">
-          
-          <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 12px; color: #fff;">
+        <div
+          style="background: radial-gradient(circle at top right, rgba(56, 182, 255, 0.25), transparent 70%), #111a2e; border: 1.5px solid var(--border-neon); border-radius: 8px; padding: 50px 30px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);">
+          <img src="/assets/images/app_icon.png" alt="Car Rush"
+            style="width: 76px; height: 76px; border-radius: 8px; box-shadow: 0 10px 25px rgba(56,182,255,0.4); margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2);">
+
+          <h2
+            style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 12px; color: #fff;">
             Ready To Draw, Drive & Rush?
           </h2>
           <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 620px; margin: 0 auto 30px;">
-            Join thousands of happy players building bridges and conquering physics puzzles. Download Car Rush today for free!
+            Join thousands of happy players building bridges and conquering physics puzzles. Download Car Rush today for
+            free!
           </p>
 
           <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-            <a href="https://play.google.com/store" target="_blank" rel="noopener" class="store-badge-card" style="background: #0b1120;">
+            <a href="https://play.google.com/store" target="_blank" rel="noopener" class="store-badge-card"
+              style="background: #0b1120;">
               <span class="store-badge-icon" aria-hidden="true">🤖</span>
               <div class="store-badge-texts">
                 <span class="store-badge-caption">GET IT ON</span>
@@ -518,7 +558,8 @@
               </div>
             </a>
 
-            <a href="https://apple.com/app-store" target="_blank" rel="noopener" class="store-badge-card" style="background: #0b1120;">
+            <a href="https://apple.com/app-store" target="_blank" rel="noopener" class="store-badge-card"
+              style="background: #0b1120;">
               <span class="store-badge-icon" aria-hidden="true">🍏</span>
               <div class="store-badge-texts">
                 <span class="store-badge-caption">Download on the</span>
@@ -547,7 +588,8 @@
             </div>
           </a>
           <p class="Footer-module__brandDesc">
-            The intelligent 2D physics puzzle path-drawing casual mobile game. Connecting creative engineering with dynamic Forge2D physics, 200 progressive levels across 16 dynamic biomes, and family-safe entertainment.
+            The intelligent 2D physics puzzle path-drawing casual mobile game. Connecting creative engineering with
+            dynamic Forge2D physics, 200 progressive levels across 16 dynamic biomes, and family-safe entertainment.
           </p>
         </div>
 
@@ -568,9 +610,11 @@
         <div>
           <h4 class="Footer-module__colTitle">Privacy &amp; Resources</h4>
           <ul class="Footer-module__linkList">
-            <li><a class="Footer-module__footerLink Footer-module__highlightLink" href="/privacy">Privacy Policy (COPPA)</a></li>
+            <li><a class="Footer-module__footerLink Footer-module__highlightLink" href="/privacy">Privacy Policy
+                (COPPA)</a></li>
             <li><a class="Footer-module__footerLink" href="/terms">Terms of Service &amp; EULA</a></li>
-            <li><a class="Footer-module__footerLink" href="#" data-open-modal="modalDataDeletion">Data Deletion Portal</a></li>
+            <li><a class="Footer-module__footerLink" href="#" data-open-modal="modalDataDeletion">Data Deletion
+                Portal</a></li>
             <li><a class="Footer-module__footerLink" href="/privacy#admob">Google Play Families Policy</a></li>
             <li><a class="Footer-module__footerLink" href="/privacy#coppa">Children's Privacy Protection</a></li>
             <li><a class="Footer-module__footerLink" href="#" data-open-modal="modalContact">Developer Support</a></li>
@@ -588,7 +632,8 @@
         </div>
         <div class="Footer-module__poweredByWrap">
           <span>Powered by</span>
-          <a href="https://appstick.com.bd" target="_blank" rel="noopener noreferrer" class="Footer-module__poweredByLink">Appstick</a>
+          <a href="https://appstick.com.bd" target="_blank" rel="noopener noreferrer"
+            class="Footer-module__poweredByLink">Appstick</a>
         </div>
       </div>
     </div>
@@ -630,13 +675,15 @@
       <button class="modal-close-btn" aria-label="Close Modal">✕</button>
       <h3 class="modal-title" id="delTitle">🗑️ Data Deletion Request</h3>
       <p class="modal-subtitle">
-        In compliance with Google Play Store Policies and GDPR, you have the right to request the permanent deletion of your game records.
+        In compliance with Google Play Store Policies and GDPR, you have the right to request the permanent deletion of
+        your game records.
       </p>
 
       <form id="dataDeletionForm">
         <div class="form-group">
           <label class="form-label" for="deletionDeviceId">Anonymous Device ID (Optional if Email provided)</label>
-          <input type="text" id="deletionDeviceId" class="form-input" placeholder="e.g. 8f4b-22da-9c12 or found in app settings">
+          <input type="text" id="deletionDeviceId" class="form-input"
+            placeholder="e.g. 8f4b-22da-9c12 or found in app settings">
         </div>
 
         <div class="form-group">
@@ -646,7 +693,8 @@
 
         <div class="form-group">
           <label class="form-label" for="deletionReason">Reason for Deletion (Optional)</label>
-          <textarea id="deletionReason" class="form-textarea" placeholder="Let us know why you would like your record removed..."></textarea>
+          <textarea id="deletionReason" class="form-textarea"
+            placeholder="Let us know why you would like your record removed..."></textarea>
         </div>
 
         <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
@@ -683,7 +731,8 @@
 
         <div class="form-group">
           <label class="form-label" for="contactMessage">Message</label>
-          <textarea id="contactMessage" class="form-textarea" placeholder="Tell us what's on your mind..." required></textarea>
+          <textarea id="contactMessage" class="form-textarea" placeholder="Tell us what's on your mind..."
+            required></textarea>
         </div>
 
         <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
@@ -699,4 +748,5 @@
   <script src="/js/game-preview.js"></script>
   <script src="/js/app.js"></script>
 </body>
+
 </html>

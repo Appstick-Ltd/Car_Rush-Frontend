@@ -23,7 +23,7 @@ app.get('/api/game-info', (req, res) => {
   res.json({
     name: 'Car Rush: Draw & Drive',
     version: '1.0.0',
-    developer: 'Appstick Ltd',
+    developer: 'Appstick',
     genre: 'Physics Puzzle / Casual Mobile Game',
     platforms: ['Android', 'iOS'],
     rating: '4.9',
