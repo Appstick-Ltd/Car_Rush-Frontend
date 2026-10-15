@@ -28,6 +28,33 @@
 
 <body data-biome="meadow">
 
+  <!-- Page Preloader -->
+  <div id="page-preloader">
+    <img src="/assets/images/app_icon.png" alt="Car Rush" class="preloader-logo">
+    <div class="preloader-bar-wrap">
+      <div class="preloader-bar-fill"></div>
+    </div>
+    <span class="preloader-text">Loading Car Rush...</span>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <!-- Mobile Full-Screen Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    <a href="#hero" class="mobile-nav-link">🏠 Home</a>
+    <a href="#simulator" class="mobile-nav-link">🎮 Play Demo</a>
+    <a href="#biomes" class="mobile-nav-link">🌍 Biomes</a>
+    <a href="#features" class="mobile-nav-link">⚡ Features</a>
+    <a href="#screenshots" class="mobile-nav-link">🖼️ Gallery</a>
+    <a href="/privacy" class="mobile-nav-link">🛡️ Privacy</a>
+    <a href="#faq" class="mobile-nav-link">❓ FAQ</a>
+    <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="mobile-nav-download-btn">
+      ⬇️ Download App
+    </a>
+  </div>
+
   <!-- Ambient Glowing Background Blobs -->
   <div class="ambient-bg" aria-hidden="true">
     <div class="ambient-blob blob-1"></div>
@@ -66,6 +93,12 @@
         <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="Navbar-module__btnDownload" id="btnHeaderDownload">
           <span>Download App</span>
         </a>
+        <!-- Hamburger — visible on mobile -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -98,7 +131,7 @@
               </div>
             </a>
 
-            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="store-badge-card" id="btnAppStoreHero">
+            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="store-badge-card badge-coming-soon" id="btnAppStoreHero">
               <span class="store-badge-icon" aria-hidden="true">🍏</span>
               <div class="store-badge-texts">
                 <span class="store-badge-caption">Download on the</span>
@@ -209,7 +242,7 @@
     </section>
 
     <!-- Interactive Biome Selector -->
-    <section class="section" id="biomes">
+    <section class="section section-animate" id="biomes">
       <div class="container">
         <div class="section-header">
           <span class="section-pill">Dynamic Environments</span>
@@ -275,7 +308,7 @@
     </section>
 
     <!-- App Feature Grid -->
-    <section class="section" id="features">
+    <section class="section section-animate" id="features">
       <div class="container">
         <div class="section-header">
           <span class="section-pill">Why Players Love It</span>
@@ -350,7 +383,7 @@
     </section>
 
     <!-- Family Safety & Privacy Spotlight Banner -->
-    <section class="section" id="safety">
+    <section class="section section-animate" id="safety">
       <div class="container">
         <div class="safety-spotlight-card">
           <div>
@@ -404,7 +437,7 @@
     </section>
 
     <!-- In-Game Screenshots Gallery -->
-    <section class="section" id="screenshots">
+    <section class="section section-animate" id="screenshots">
       <div class="container">
         <div class="section-header">
           <span class="section-pill">Gameplay Showcase</span>
@@ -449,7 +482,7 @@
     </section>
 
     <!-- Frequently Asked Questions -->
-    <section class="section" id="faq">
+    <section class="section section-animate" id="faq">
       <div class="container">
         <div class="section-header">
           <span class="section-pill">Got Questions?</span>
@@ -532,7 +565,7 @@
     </section>
 
     <!-- Download CTA Banner -->
-    <section class="section" id="download" style="padding-bottom: 80px;">
+    <section class="section section-animate" id="download" style="padding-bottom: 80px;">
       <div class="container">
         <div
           style="background: radial-gradient(circle at top right, rgba(56, 182, 255, 0.25), transparent 70%), #111a2e; border: 1.5px solid var(--border-neon); border-radius: 8px; padding: 50px 30px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);">
@@ -591,6 +624,12 @@
             The intelligent 2D physics puzzle path-drawing casual mobile game. Connecting creative engineering with
             dynamic Forge2D physics, 200 progressive levels across 16 dynamic biomes, and family-safe entertainment.
           </p>
+          <!-- Social Media Links -->
+          <div class="footer-social-row">
+            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="footer-social-link" title="Google Play" aria-label="Google Play">🤖</a>
+            <a href="https://appstick.com.bd" target="_blank" rel="noopener" class="footer-social-link" title="Website" aria-label="Appstick Website">🌐</a>
+            <a href="mailto:support@appstick.com.bd" class="footer-social-link" title="Email Support" aria-label="Email">✉️</a>
+          </div>
         </div>
 
         <!-- Solutions & Gameplay Column -->

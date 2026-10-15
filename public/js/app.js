@@ -4,7 +4,86 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize Simulator
+
+  // ── PAGE PRELOADER ───────────────────────────────────────────────────────
+  const preloader = document.getElementById('page-preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => preloader.classList.add('hidden'), 800);
+    });
+    // Fallback: hide after 2.5s if load is slow
+    setTimeout(() => preloader && preloader.classList.add('hidden'), 2500);
+  }
+
+  // ── SCROLL-TO-TOP BUTTON ─────────────────────────────────────────────────
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ── HAMBURGER MOBILE MENU ────────────────────────────────────────────────
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+
+  const openMobileMenu = () => {
+    hamburgerBtn && hamburgerBtn.classList.add('open');
+    if (mobileNavOverlay) {
+      mobileNavOverlay.style.display = 'flex';
+      requestAnimationFrame(() => mobileNavOverlay.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeMobileMenu = () => {
+    hamburgerBtn && hamburgerBtn.classList.remove('open');
+    if (mobileNavOverlay) {
+      mobileNavOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        if (!mobileNavOverlay.classList.contains('open')) {
+          mobileNavOverlay.style.display = 'none';
+        }
+      }, 300);
+    }
+  };
+
+  hamburgerBtn && hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+  });
+  mobileNavClose && mobileNavClose.addEventListener('click', closeMobileMenu);
+
+  // Close menu when a mobile nav link is clicked
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // ── SECTION FADE-IN (Intersection Observer) ──────────────────────────────
+  const animateSections = document.querySelectorAll('.section-animate');
+  if ('IntersectionObserver' in window && animateSections.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    animateSections.forEach(el => observer.observe(el));
+  } else {
+    // Fallback: show all immediately
+    animateSections.forEach(el => el.classList.add('in-view'));
+  }
+
   let simulator = null;
   const canvasEl = document.getElementById('physicsCanvas');
   if (canvasEl && window.CarRushSimulator) {
