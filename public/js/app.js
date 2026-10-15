@@ -212,13 +212,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Mobile Bottom Dock Active Navigation on Scroll
+  // 9. Active Navigation Highlighting on Scroll (Navbar + Mobile Dock)
   const sections = document.querySelectorAll('section[id]');
   const dockLinks = document.querySelectorAll('.mobile-app-dock .dock-item');
+  const navLinks = document.querySelectorAll('.Navbar-module__nav .Navbar-module__navLink');
 
   const onScroll = () => {
     let current = '';
-    const scrollPos = window.scrollY + 200;
+    const scrollPos = window.scrollY + 120;
 
     sections.forEach(sec => {
       if (scrollPos >= sec.offsetTop) {
@@ -226,6 +227,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Update desktop navbar active link
+    navLinks.forEach(link => {
+      link.classList.remove('Navbar-module__navLinkActive');
+      const href = link.getAttribute('href');
+      if (href === `#${current}`) {
+        link.classList.add('Navbar-module__navLinkActive');
+      }
+    });
+
+    // Update mobile dock active link
     dockLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${current}`) {
@@ -235,6 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  // Run once on load to set initial active state
+  onScroll();
+
 
   // 10. Clean URL Smooth Scroll — No #hash in address bar
   // Intercepts all internal anchor (#section) clicks and scrolls smoothly
