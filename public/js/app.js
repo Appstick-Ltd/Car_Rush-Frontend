@@ -235,4 +235,34 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // 10. Clean URL Smooth Scroll — No #hash in address bar
+  // Intercepts all internal anchor (#section) clicks and scrolls smoothly
+  // without letting the browser update the URL with the hash fragment.
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      // Ignore bare "#" links (e.g. modal triggers handled elsewhere)
+      if (!href || href === '#') return;
+
+      const targetId = href.slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (!targetEl) return;
+
+      e.preventDefault();
+
+      // Scroll to section smoothly
+      const headerOffset = 80; // fixed navbar height
+      const top = targetEl.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
+
+      // Keep URL clean — no hash shown
+      history.replaceState(null, '', window.location.pathname);
+    });
+  });
+
+  // On page load — remove any leftover hash from the URL
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname);
+  }
 });
