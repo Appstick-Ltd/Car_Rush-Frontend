@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 // Middleware for parsing JSON and form bodies
 app.use(express.json());
@@ -22,7 +22,7 @@ const contactMessages = [];
 app.get('/api/game-info', (req, res) => {
   res.json({
     name: 'Car Rush: Draw & Drive',
-    version: '1.0.0',
+    version: '2.0.0',
     developer: 'Appstick',
     genre: 'Physics Puzzle / Casual Mobile Game',
     platforms: ['Android', 'iOS'],
@@ -30,11 +30,14 @@ app.get('/api/game-info', (req, res) => {
     totalDownloads: '50,000+',
     ageRating: 'Everyone / PEGI 3 / Families Friendly (COPPA compliant)',
     features: [
-      'Draw & Drive 2D Physics Engine',
+      'Draw & Drive 2D Physics Engine with Live Drawing',
+      'Brand-New Garage with 5 Unique Vehicle Rigs & Custom Paint Studio',
+      'Endless Survival Runner Mode ("Infinite Draw") with Procedural Tracks',
+      '5 Special Magic Inks (Asphalt, Spring, Boost, Armor, Ghost)',
+      'Kinetic Hazards: Moving Platforms, Laser Gates & Speed Boost Pads',
+      'Dynamic Lockstep Camera & Responsive Layout Overhaul',
       'Multi-Biome Environments (Meadow, Sunset, Night, Magma)',
-      '100+ Handcrafted & Procedural Levels',
-      'Firebase Cloud Sync for Progress',
-      'Child & Family Safe AdMob Compliance',
+      'Child & Family Safe AdMob Compliance (COPPA & Google Play Families)',
       'Full Offline Mode Playability'
     ]
   });

@@ -307,7 +307,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Update desktop navbar active link
+    const v2SectionIds = ['v2-showcase', 'garage', 'infinite-mode', 'magic-inks', 'kinetic-hazards', 'camera-engine'];
+    const v2DropdownBtn = document.getElementById('v2DropdownBtn');
+    if (v2DropdownBtn) {
+      if (v2SectionIds.includes(current)) {
+        v2DropdownBtn.classList.add('Navbar-module__navLinkActive');
+      } else {
+        v2DropdownBtn.classList.remove('Navbar-module__navLinkActive');
+      }
+    }
+
     navLinks.forEach(link => {
+      if (link.id === 'v2DropdownBtn') return;
       link.classList.remove('Navbar-module__navLinkActive');
       const href = link.getAttribute('href');
       if (href === `#${current}`) {
@@ -327,6 +338,45 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   // Run once on load to set initial active state
   onScroll();
+
+  // ── WHAT'S NEW v2.0 DROPDOWN MENU INTERACTION ──────────────────────────
+  const v2Dropdown = document.getElementById('v2Dropdown');
+  const v2DropdownBtn = document.getElementById('v2DropdownBtn');
+  const v2DropdownMenu = document.getElementById('v2DropdownMenu');
+
+  if (v2Dropdown && v2DropdownBtn) {
+    v2DropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = v2Dropdown.classList.toggle('open');
+      v2DropdownBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close when clicking any link inside dropdown menu
+    if (v2DropdownMenu) {
+      v2DropdownMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          v2Dropdown.classList.remove('open');
+          v2DropdownBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!v2Dropdown.contains(e.target)) {
+        v2Dropdown.classList.remove('open');
+        v2DropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        v2Dropdown.classList.remove('open');
+        v2DropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
 
   // 10. Clean URL Smooth Scroll — No #hash in address bar
@@ -354,8 +404,125 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // On page load — remove any leftover hash from the URL
-  if (window.location.hash) {
-    history.replaceState(null, '', window.location.pathname);
+  // ── 11. v2.0 INTERACTIVE GARAGE SHOWROOM ENGINE ─────────────────────────
+  const vehicleCards = document.querySelectorAll('.garage-vehicle-card');
+  const paintSwatches = document.querySelectorAll('.paint-swatch-btn');
+  const stageRigName = document.getElementById('stageRigName');
+  const stageRigClass = document.getElementById('stageRigClass');
+  const stageRigPrice = document.getElementById('stageRigPrice');
+  const stageRigEmoji = document.getElementById('stageRigEmoji');
+  const btnTestDrive = document.getElementById('btnGarageTestDrive');
+  const statSpeedBar = document.getElementById('statSpeedBar');
+  const statTorqueBar = document.getElementById('statTorqueBar');
+  const statBounceBar = document.getElementById('statBounceBar');
+  const statGripBar = document.getElementById('statGripBar');
+  const statWeightBar = document.getElementById('statWeightBar');
+  const statSpeedVal = document.getElementById('statSpeedVal');
+  const statTorqueVal = document.getElementById('statTorqueVal');
+  const statBounceVal = document.getElementById('statBounceVal');
+  const statGripVal = document.getElementById('statGripVal');
+  const statWeightVal = document.getElementById('statWeightVal');
+
+  let selectedVehicle = 'buggy';
+  let selectedPaint = '#38b6ff';
+
+  const updateGarageShowroom = (vId) => {
+    selectedVehicle = vId;
+    const cfg = window.VEHICLE_CONFIGS ? window.VEHICLE_CONFIGS[vId] : null;
+    if (!cfg) return;
+
+    // Update active tab card
+    vehicleCards.forEach(card => {
+      card.classList.toggle('active', card.getAttribute('data-vehicle') === vId);
+    });
+
+    // Update Stage texts
+    if (stageRigName) stageRigName.textContent = cfg.name;
+    if (stageRigClass) stageRigClass.textContent = cfg.class;
+    if (stageRigPrice) stageRigPrice.textContent = cfg.unlock;
+    if (stageRigEmoji) stageRigEmoji.textContent = cfg.emoji;
+
+    // Update Performance Metric Bars
+    if (statSpeedBar) statSpeedBar.style.width = `${cfg.speed}%`;
+    if (statTorqueBar) statTorqueBar.style.width = `${vId === 'monster' ? 98 : Math.round(cfg.speed * 0.9)}%`;
+    if (statBounceBar) statBounceBar.style.width = `${cfg.bounce}%`;
+    if (statGripBar) statGripBar.style.width = `${cfg.grip}%`;
+    if (statWeightBar) statWeightBar.style.width = `${cfg.weight}%`;
+
+    if (statSpeedVal) statSpeedVal.textContent = `${cfg.speed}`;
+    if (statTorqueVal) statTorqueVal.textContent = `${vId === 'monster' ? 98 : Math.round(cfg.speed * 0.9)}`;
+    if (statBounceVal) statBounceVal.textContent = `${cfg.bounce}`;
+    if (statGripVal) statGripVal.textContent = `${cfg.grip}`;
+    if (statWeightVal) statWeightVal.textContent = `${cfg.weight}`;
+
+    // Update Pedestal Vehicle Visual Class
+    const pedestalStage = document.getElementById('garagePedestalStage');
+    if (pedestalStage) {
+      pedestalStage.setAttribute('data-rig', vId);
+    }
+
+    // Play engine sound
+    if (simulator && !audioMuted) {
+      simulator.setVehicle(vId);
+    }
+  };
+
+  vehicleCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const v = card.getAttribute('data-vehicle');
+      updateGarageShowroom(v);
+    });
+  });
+
+  paintSwatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      paintSwatches.forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      selectedPaint = swatch.getAttribute('data-color');
+
+      // Update pedestal styling
+      document.documentElement.style.setProperty('--garage-active-paint', selectedPaint);
+
+      // Update pedestal vehicle SVG colors
+      document.querySelectorAll('.pedestal-rig-color').forEach(el => {
+        el.setAttribute('fill', selectedPaint);
+      });
+
+      // Update simulator
+      if (simulator) {
+        simulator.setVehicleColor(selectedPaint);
+      }
+    });
+  });
+
+  if (btnTestDrive) {
+    btnTestDrive.addEventListener('click', (e) => {
+      e.preventDefault();
+      const simSec = document.getElementById('simulator');
+      if (simSec) {
+        const top = simSec.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+        setTimeout(() => {
+          if (simulator) {
+            simulator.setVehicle(selectedVehicle);
+            simulator.setVehicleColor(selectedPaint);
+            simulator.startDrive();
+          }
+        }, 500);
+      }
+    });
   }
+
+  // ── 12. v2.0 MAGIC INKS INTERACTION ────────────────────────────────────
+  const magicInkCards = document.querySelectorAll('.magic-ink-card');
+  magicInkCards.forEach(card => {
+    card.addEventListener('click', () => {
+      magicInkCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      const ink = card.getAttribute('data-ink');
+      if (simulator) {
+        simulator.setMagicInk(ink);
+      }
+    });
+  });
 });

@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Rush: Draw & Drive — Official Mobile Game & Community</title>
+  <title>Car Rush: Draw &amp; Drive v2.0 — Garage Showroom, Infinite Runner &amp; Physics Racing</title>
   <meta name="description"
-    content="Car Rush: Draw & Drive is a thrilling 2D physics path-drawing casual mobile game. Draw glowing bridges with your finger to guide your toy car across chasms and hazards to the finish line!">
+    content="Car Rush: Draw &amp; Drive v2.0 is here! Discover 5 custom garage vehicle rigs, dynamic live drawing, 5 magic pencils, procedural Infinite Draw runner mode, and kinetic hazards.">
   <meta name="keywords"
-    content="Car Rush, Draw and Drive, physics puzzle game, mobile casual game, Flutter game, Flame Forge2D, kid friendly games, family games, Google Play">
+    content="Car Rush v2.0, Draw and Drive, physics puzzle game, mobile casual game, garage vehicle customization, infinite draw runner, magic pencils, Flutter game, Flame Forge2D, kid friendly games, family games, Google Play">
   <meta name="theme-color" content="#0a0e17">
 
   <!-- OpenGraph / Social Meta Tags -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Car Rush: Draw & Drive — Mobile Physics Casual Game">
+  <meta property="og:title" content="Car Rush: Draw &amp; Drive v2.0 — Major Update Live!">
   <meta property="og:description"
-    content="Draw bridges, dodge hazards, and rush to victory! Built with Flame Forge2D physics.">
-  <meta property="og:image" content="/assets/images/hero_banner.jpg">
+    content="Discover 5 unique garage rigs, dynamic live drawing, 5 magic pencils, endless survival runner, and kinetic obstacles!">
+  <meta property="og:image" content="/assets/images/garage_showroom.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/app_icon.png">
@@ -34,7 +34,7 @@
     <div class="preloader-bar-wrap">
       <div class="preloader-bar-fill"></div>
     </div>
-    <span class="preloader-text">Loading Car Rush...</span>
+    <span class="preloader-text">Loading Car Rush v2.0...</span>
   </div>
 
   <!-- Scroll To Top Button -->
@@ -44,13 +44,17 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay">
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
     <a href="#hero" class="mobile-nav-link">🏠 Home</a>
+    <a href="#v2-showcase" class="mobile-nav-link">🚀 What's New v2.0</a>
+    <a href="#garage" class="mobile-nav-link">🏆 Garage Showroom</a>
+    <a href="#infinite-mode" class="mobile-nav-link">♾️ Infinite Draw Mode</a>
+    <a href="#magic-inks" class="mobile-nav-link">✏️ 5 Magic Inks</a>
     <a href="#simulator" class="mobile-nav-link">🎮 Play Demo</a>
     <a href="#biomes" class="mobile-nav-link">🌍 Biomes</a>
     <a href="#features" class="mobile-nav-link">⚡ Features</a>
-    <a href="#screenshots" class="mobile-nav-link">🖼️ Gallery</a>
-    <a href="/privacy" class="mobile-nav-link">🛡️ Privacy</a>
+    <a href="/privacy" class="mobile-nav-link">🛡️ Privacy Policy</a>
     <a href="#faq" class="mobile-nav-link">❓ FAQ</a>
-    <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="mobile-nav-download-btn">
+    <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener"
+      class="mobile-nav-download-btn">
       ⬇️ Download App
     </a>
   </div>
@@ -62,7 +66,7 @@
     <div class="ambient-blob blob-3"></div>
   </div>
 
-  <!-- BloodBank Style Header / Navigation (matching https://bloodbank.appstick.com.bd/) -->
+  <!-- BloodBank Style Header / Navigation -->
   <header class="Navbar-module__header">
     <div class="Navbar-module__container">
       <a href="/" class="Navbar-module__logo" id="brandLogo">
@@ -77,11 +81,64 @@
 
       <nav class="Navbar-module__nav">
         <a href="#hero" class="Navbar-module__navLink Navbar-module__navLinkActive">Home</a>
+
+        <!-- v2.0 Features Dropdown -->
+        <div class="nav-dropdown" id="v2Dropdown">
+          <button class="nav-dropdown-btn Navbar-module__navLink nav-v2-badge" id="v2DropdownBtn" aria-expanded="false"
+            aria-haspopup="true">
+            <span>What's New</span>
+            <span class="v2-tag">v2.0</span>
+            <span class="dropdown-chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="v2DropdownMenu" role="menu">
+            <a href="#v2-showcase" class="dropdown-item" role="menuitem">
+              <span class="dropdown-item-icon">🚀</span>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">v2.0 Overview</span>
+                <span class="dropdown-item-desc">All new features at a glance</span>
+              </div>
+            </a>
+            <a href="#garage" class="dropdown-item" role="menuitem">
+              <span class="dropdown-item-icon">🏆</span>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Garage Showroom</span>
+                <span class="dropdown-item-desc">5 custom vehicles &amp; paint studio</span>
+              </div>
+            </a>
+            <a href="#infinite-mode" class="dropdown-item" role="menuitem">
+              <span class="dropdown-item-icon">♾️</span>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Infinite Draw Mode</span>
+                <span class="dropdown-item-desc">Procedural endless survival runner</span>
+              </div>
+            </a>
+            <a href="#magic-inks" class="dropdown-item" role="menuitem">
+              <span class="dropdown-item-icon">✏️</span>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">5 Magic Pencils</span>
+                <span class="dropdown-item-desc">Live drawing while driving</span>
+              </div>
+            </a>
+            <a href="#kinetic-hazards" class="dropdown-item" role="menuitem">
+              <span class="dropdown-item-icon">⚙️</span>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Kinetic Hazards</span>
+                <span class="dropdown-item-desc">Moving platforms &amp; laser gates</span>
+              </div>
+            </a>
+            <a href="#camera-engine" class="dropdown-item" role="menuitem">
+              <span class="dropdown-item-icon">📱</span>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Camera &amp; Engine</span>
+                <span class="dropdown-item-desc">Lockstep camera &amp; responsive UI</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <a href="#simulator" class="Navbar-module__navLink">Play Demo</a>
         <a href="#biomes" class="Navbar-module__navLink">Biomes</a>
         <a href="#features" class="Navbar-module__navLink">Features</a>
-        <a href="#screenshots" class="Navbar-module__navLink">Gallery</a>
-        <a href="/privacy" class="Navbar-module__navLink">Privacy Policy</a>
         <a href="#faq" class="Navbar-module__navLink">FAQ</a>
       </nav>
 
@@ -90,7 +147,8 @@
           aria-label="Toggle Sound Effects">
           🔊
         </button>
-        <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="Navbar-module__btnDownload" id="btnHeaderDownload">
+        <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener"
+          class="Navbar-module__btnDownload" id="btnHeaderDownload">
           <span>Download App</span>
         </a>
         <!-- Hamburger — visible on mobile -->
@@ -110,6 +168,15 @@
         <!-- Hero Text & Download CTAs -->
         <div class="hero-content">
 
+          <!-- v2.0 Top Announcement Pill -->
+          <div class="v2-announcement-pill">
+            <span class="v2-pulse-dot"></span>
+            <span class="v2-badge-text">v2.0 MAJOR UPDATE LIVE</span>
+            <span class="v2-sep">•</span>
+            <span>Garage Customizer &amp; Infinite Draw Mode!</span>
+            <a href="#v2-showcase" class="v2-pill-link">Explore What's New ➔</a>
+          </div>
+
           <h1 class="hero-title">
             Draw The Bridge.<br>
             <span class="text-gradient">Rush To Victory!</span>
@@ -117,13 +184,14 @@
 
           <p class="hero-description">
             Unleash your creativity in the ultimate 2D physics puzzle racing adventure!
-            Draw glowing neon lines with your finger to build sturdy bridges, bypass perilous spike pits,
-            avoid fiery magma lakes, and guide your adorable toy race car safely to the checkered finish flag.
+            Now supercharged in <strong>v2.0</strong> with custom garage rigs, procedural infinite runner tracks,
+            dynamic live drawing while driving, and 5 magic pencils.
           </p>
 
           <!-- App Store Download Badges -->
           <div class="store-badges-group">
-            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="store-badge-card" id="btnGooglePlayHero">
+            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank"
+              rel="noopener" class="store-badge-card" id="btnGooglePlayHero">
               <span class="store-badge-icon" aria-hidden="true">🤖</span>
               <div class="store-badge-texts">
                 <span class="store-badge-caption">GET IT ON</span>
@@ -131,7 +199,8 @@
               </div>
             </a>
 
-            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="store-badge-card badge-coming-soon" id="btnAppStoreHero">
+            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank"
+              rel="noopener" class="store-badge-card badge-coming-soon" id="btnAppStoreHero">
               <span class="store-badge-icon" aria-hidden="true">🍏</span>
               <div class="store-badge-texts">
                 <span class="store-badge-caption">Download on the</span>
@@ -147,8 +216,12 @@
               <span class="stat-label">Google Play Rating</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num">100+</span>
-              <span class="stat-label">Physics Levels</span>
+              <span class="stat-num">5 Rigs</span>
+              <span class="stat-label">Custom Garage</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">Infinite</span>
+              <span class="stat-label">Survival Runner</span>
             </div>
             <div class="stat-item">
               <span class="stat-num">100%</span>
@@ -205,7 +278,28 @@
                       </div>
                     </div>
                     <div class="hud-pill" id="simScoreBadge">
-                      <span>Draw a bridge!</span>
+                      <span>🏎️ Speedy Buggy</span>
+                    </div>
+                    <div class="hud-pill" id="simCoinBadge">
+                      <span id="simCoinCount">🪙 0</span>
+                    </div>
+                  </div>
+
+                  <!-- Quick Rig & Ink Selector Chips -->
+                  <div class="sim-quick-controls">
+                    <div class="sim-chip-group">
+                      <span class="sim-chip-label">Rig:</span>
+                      <button class="sim-vehicle-chip active" data-vehicle="buggy" title="Speedy Buggy">🏎️</button>
+                      <button class="sim-vehicle-chip" data-vehicle="monster" title="Monster Truck">🛞</button>
+                      <button class="sim-vehicle-chip" data-vehicle="apex" title="Apex Turbo">🏎️💨</button>
+                      <button class="sim-vehicle-chip" data-vehicle="camper" title="Hippie Cruiser">🚐</button>
+                      <button class="sim-vehicle-chip" data-vehicle="cyber" title="Cyber Pulse">⚡</button>
+                    </div>
+                    <div class="sim-chip-group">
+                      <span class="sim-chip-label">Ink:</span>
+                      <button class="sim-ink-chip active" data-ink="asphalt" title="Asphalt">🛣️</button>
+                      <button class="sim-ink-chip" data-ink="spring" title="Spring">🌸</button>
+                      <button class="sim-ink-chip" data-ink="boost" title="Nitro Boost">⚡</button>
                     </div>
                   </div>
 
@@ -235,6 +329,638 @@
                 <img src="/assets/images/screenshot_lava.svg" alt="Authentic Driving Phase Gameplay"
                   class="sim-screenshot-img">
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         1. WHAT'S NEW IN v2.0 OVERVIEW HUB
+         ====================================================================== -->
+    <section class="section section-animate v2-hero-overview" id="v2-showcase">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill v2-glow-pill">🚀 Major Update v2.0 Live!</span>
+          <h2 class="section-title">What's New in Car Rush: Draw &amp; Drive v2.0!</h2>
+          <p class="section-subtitle">
+            We are thrilled to bring you our biggest update yet! Discover brand-new game modes,
+            custom garage vehicles, kinetic obstacles, and dynamic physics racing.
+          </p>
+        </div>
+
+        <!-- 5 Release Pillars Grid -->
+        <div class="v2-pillars-grid">
+          <!-- Pillar 1 -->
+          <a href="#garage" class="v2-pillar-card">
+            <div class="v2-pillar-icon">🏆</div>
+            <div class="v2-pillar-badge">1. Garage &amp; Rigs</div>
+            <h3 class="v2-pillar-title">5 Custom Vehicles</h3>
+            <p class="v2-pillar-desc">
+              Speedy Buggy, Mega Monster Truck, Apex Turbo, Hippie Cruiser, and Cyber Pulse on a 3D showroom pedestal!
+            </p>
+            <span class="v2-card-link">Explore Garage ➔</span>
+          </a>
+
+          <!-- Pillar 2 -->
+          <a href="#infinite-mode" class="v2-pillar-card highlight-pillar">
+            <div class="v2-pillar-icon">♾️</div>
+            <div class="v2-pillar-badge">2. Endless Runner</div>
+            <h3 class="v2-pillar-title">Infinite Draw Mode</h3>
+            <p class="v2-pillar-desc">
+              Procedural track generation, supercharged 3,500px pen tank, 220px/s continuous ink recharge, and refill
+              flasks.
+            </p>
+            <span class="v2-card-link">See Infinite Mode ➔</span>
+          </a>
+
+          <!-- Pillar 3 -->
+          <a href="#magic-inks" class="v2-pillar-card">
+            <div class="v2-pillar-icon">✏️</div>
+            <div class="v2-pillar-badge">3. Live Drawing</div>
+            <h3 class="v2-pillar-title">5 Magic Pencils</h3>
+            <p class="v2-pillar-desc">
+              Draw while cruising at full speed! Switch between Asphalt, Bouncy Spring, Boost Accelerator, Heavy Armor,
+              and Ghost bridges.
+            </p>
+            <span class="v2-card-link">Test Magic Inks ➔</span>
+          </a>
+
+          <!-- Pillar 4 -->
+          <a href="#kinetic-hazards" class="v2-pillar-card">
+            <div class="v2-pillar-icon">⚙️</div>
+            <div class="v2-pillar-badge">4. Kinetic Hazards</div>
+            <h3 class="v2-pillar-title">World Components</h3>
+            <p class="v2-pillar-desc">
+              Hydraulic moving platforms, nitro speed boost pads, 3-state laser gates, and rolling boulder traps.
+            </p>
+            <span class="v2-card-link">View Hazards ➔</span>
+          </a>
+
+          <!-- Pillar 5 -->
+          <a href="#camera-engine" class="v2-pillar-card" style="grid-column: 1 / -1;">
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+              <div>
+                <div class="v2-pillar-badge">5. Engine Overhaul</div>
+                <h3 class="v2-pillar-title" style="margin-bottom: 4px;">Lockstep Dynamic Camera &amp; Responsive Layout
+                </h3>
+                <p class="v2-pillar-desc" style="margin-bottom: 0;">
+                  Ultra-smooth camera tracking rightward without losing sight of roadway + zero-overflow adaptive UI
+                  (360px+).
+                </p>
+              </div>
+              <span class="v2-card-link">Learn More ➔</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. BRAND-NEW GARAGE & VEHICLE CUSTOMIZATION (#garage)
+         ====================================================================== -->
+    <section class="section section-animate" id="garage">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">🏆 1. Brand-New Garage</span>
+          <h2 class="section-title">Vehicle Customization &amp; 3D Showroom</h2>
+          <p class="section-subtitle">
+            Showcase 5 unique vehicle rigs on an illuminated 3D pedestal with live suspension hover,
+            rotating tires, overhead spotlights, and real-time custom paint personalization.
+          </p>
+        </div>
+
+        <div class="garage-layout-grid">
+          <!-- Left: 3D Pedestal Stage Container -->
+          <div class="garage-stage-container">
+            <div class="garage-spotlight"></div>
+
+            <div class="garage-badge-floating">
+              <span class="garage-showroom-pill">
+                <span class="v2-pulse-dot"></span> 3D Live Showroom
+              </span>
+              <span class="garage-price-tag" id="stageRigPrice">Default Free</span>
+            </div>
+
+            <!-- Pedestal Base & Floating Rig -->
+            <div class="garage-pedestal-stage" id="garagePedestalStage" data-rig="buggy">
+              <div class="garage-pedestal-ring"></div>
+
+              <div class="garage-vehicle-pod" id="pedestalVehiclePod">
+                <!-- SVG Rig 1: Speedy Buggy -->
+                <svg class="pedestal-rig-svg" id="rigSvgBuggy" viewBox="0 0 200 120" fill="none">
+                  <rect x="25" y="55" width="150" height="42" rx="16" class="pedestal-rig-color" fill="#38b6ff" />
+                  <rect x="20" y="62" width="160" height="28" rx="14" fill="#0f172a" opacity="0.3" />
+                  <path d="M60 55 L75 22 L135 22 L150 55 Z" fill="#e0f2fe" />
+                  <ellipse cx="100" cy="38" rx="8" ry="10" fill="#ffffff" />
+                  <ellipse cx="120" cy="38" rx="8" ry="10" fill="#ffffff" />
+                  <circle cx="102" cy="38" r="4.5" fill="#0f172a" />
+                  <circle cx="122" cy="38" r="4.5" fill="#0f172a" />
+                  <rect x="70" y="16" width="70" height="8" rx="4" fill="#ffd166" />
+                  <text x="50" y="82" font-family="Fredoka, sans-serif" font-weight="bold" font-size="22"
+                    fill="#ffffff">7</text>
+                  <circle cx="172" cy="72" r="8" fill="#fff3b0" />
+                  <circle cx="55" cy="98" r="22" fill="#1e293b" />
+                  <circle cx="55" cy="98" r="12" fill="#94a3b8" />
+                  <circle cx="55" cy="98" r="5" fill="#38b6ff" />
+                  <circle cx="145" cy="98" r="22" fill="#1e293b" />
+                  <circle cx="145" cy="98" r="12" fill="#94a3b8" />
+                  <circle cx="145" cy="98" r="5" fill="#38b6ff" />
+                </svg>
+
+                <!-- SVG Rig 2: Mega Monster Truck -->
+                <svg class="pedestal-rig-svg" id="rigSvgMonster" viewBox="0 0 200 140" fill="none">
+                  <line x1="50" y1="65" x2="50" y2="105" stroke="#475569" stroke-width="8" stroke-linecap="round" />
+                  <line x1="150" y1="65" x2="150" y2="105" stroke="#475569" stroke-width="8" stroke-linecap="round" />
+                  <rect x="30" y="45" width="145" height="42" rx="10" class="pedestal-rig-color" fill="#38b6ff" />
+                  <path d="M55 45 L68 18 L130 18 L142 45 Z" fill="#1e293b" />
+                  <path d="M68 40 L76 24 L122 24 L130 40 Z" fill="#38bdf8" />
+                  <circle cx="82" cy="12" r="6" fill="#f59e0b" />
+                  <circle cx="100" cy="12" r="6" fill="#f59e0b" />
+                  <circle cx="118" cy="12" r="6" fill="#f59e0b" />
+                  <rect x="170" y="52" width="10" height="26" rx="4" fill="#94a3b8" />
+                  <rect x="40" y="10" width="8" height="40" rx="3" fill="#cbd5e1" />
+                  <circle cx="50" cy="105" r="32" fill="#0f172a" />
+                  <circle cx="50" cy="105" r="26" fill="#1e293b" />
+                  <circle cx="50" cy="105" r="14" fill="#f59e0b" />
+                  <circle cx="50" cy="105" r="6" fill="#0f172a" />
+                  <circle cx="150" cy="105" r="32" fill="#0f172a" />
+                  <circle cx="150" cy="105" r="26" fill="#1e293b" />
+                  <circle cx="150" cy="105" r="14" fill="#f59e0b" />
+                  <circle cx="150" cy="105" r="6" fill="#0f172a" />
+                </svg>
+
+                <!-- SVG Rig 3: Apex Turbo -->
+                <svg class="pedestal-rig-svg" id="rigSvgApex" viewBox="0 0 200 120" fill="none">
+                  <path d="M185 85 L140 68 L60 68 L20 80 L15 88 L185 88 Z" class="pedestal-rig-color" fill="#38b6ff" />
+                  <rect x="165" y="82" width="28" height="8" rx="3" fill="#0f172a" />
+                  <rect x="75" y="56" width="35" height="16" rx="8" fill="#0f172a" />
+                  <circle cx="92" cy="54" r="10" fill="#ffd166" />
+                  <rect x="15" y="38" width="22" height="6" rx="2" fill="#0f172a" />
+                  <line x1="26" y1="44" x2="26" y2="80" stroke="#475569" stroke-width="4" />
+                  <circle cx="45" cy="88" r="20" fill="#1e293b" />
+                  <circle cx="45" cy="88" r="11" fill="#ef4444" />
+                  <circle cx="45" cy="88" r="5" fill="#ffffff" />
+                  <circle cx="155" cy="88" r="20" fill="#1e293b" />
+                  <circle cx="155" cy="88" r="11" fill="#ef4444" />
+                  <circle cx="155" cy="88" r="5" fill="#ffffff" />
+                </svg>
+
+                <!-- SVG Rig 4: Hippie Cruiser -->
+                <svg class="pedestal-rig-svg" id="rigSvgCamper" viewBox="0 0 200 130" fill="none">
+                  <rect x="45" y="10" width="105" height="10" rx="3" fill="none" stroke="#94a3b8" stroke-width="3" />
+                  <rect x="60" y="4" width="30" height="8" rx="2" fill="#f97316" />
+                  <rect x="100" y="4" width="40" height="8" rx="2" fill="#10b981" />
+                  <path d="M30 65 L30 38 Q30 20 50 20 L145 20 Q168 20 168 38 L168 65 Z" fill="#f8fafc" />
+                  <path d="M30 65 L168 65 L168 92 Q168 98 160 98 L38 98 Q30 98 30 92 Z" class="pedestal-rig-color"
+                    fill="#38b6ff" />
+                  <rect x="45" y="32" width="38" height="25" rx="5" fill="#38bdf8" />
+                  <rect x="95" y="32" width="40" height="25" rx="5" fill="#38bdf8" />
+                  <circle cx="28" cy="72" r="14" fill="#334155" />
+                  <circle cx="166" cy="78" r="8" fill="#fef08a" />
+                  <rect x="165" y="88" width="8" height="12" rx="3" fill="#cbd5e1" />
+                  <circle cx="62" cy="100" r="20" fill="#1e293b" />
+                  <circle cx="62" cy="100" r="12" fill="#f8fafc" />
+                  <circle cx="62" cy="100" r="6" fill="#cbd5e1" />
+                  <circle cx="140" cy="100" r="20" fill="#1e293b" />
+                  <circle cx="140" cy="100" r="12" fill="#f8fafc" />
+                  <circle cx="140" cy="100" r="6" fill="#cbd5e1" />
+                </svg>
+
+                <!-- SVG Rig 5: Cyber Pulse -->
+                <svg class="pedestal-rig-svg" id="rigSvgCyber" viewBox="0 0 200 120" fill="none">
+                  <ellipse cx="100" cy="96" rx="80" ry="10" fill="#00f5d4" opacity="0.6" />
+                  <path d="M185 80 L150 56 L85 54 L35 70 L20 86 L185 86 Z" fill="#0f172a" />
+                  <path d="M175 75 L145 59 L88 57 L42 72" stroke="#00f5d4" stroke-width="4" stroke-linecap="round" />
+                  <path d="M135 56 L110 38 L75 42 L85 56 Z" class="pedestal-rig-color" fill="#38b6ff" />
+                  <ellipse cx="20" cy="80" rx="4" ry="8" fill="#a855f7" />
+                  <circle cx="55" cy="88" r="20" fill="#0f172a" stroke="#00f5d4" stroke-width="3" />
+                  <circle cx="55" cy="88" r="9" class="pedestal-rig-color" fill="#38b6ff" />
+                  <circle cx="150" cy="88" r="20" fill="#0f172a" stroke="#00f5d4" stroke-width="3" />
+                  <circle cx="150" cy="88" r="9" class="pedestal-rig-color" fill="#38b6ff" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Pedestal Bottom Info & CTA -->
+            <div class="garage-stage-info">
+              <div class="garage-rig-title-wrap">
+                <h3 class="garage-rig-title">
+                  <span id="stageRigEmoji">🏎️</span>
+                  <span id="stageRigName">Speedy Buggy</span>
+                </h3>
+              </div>
+              <p class="garage-rig-class" id="stageRigClass">
+                Balanced classic all-rounder with expressive physics.
+              </p>
+              <button class="garage-test-drive-btn" id="btnGarageTestDrive">
+                <span>Test Drive in Live Demo</span>
+                <span>🎮💨</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Controls, Rigs & Custom Paint Studio -->
+          <div class="garage-controls-panel">
+            <!-- 5 Vehicle Selector Cards -->
+            <div class="garage-vehicle-selector">
+              <!-- Rig 1 -->
+              <div class="garage-vehicle-card active" data-vehicle="buggy">
+                <span class="vehicle-card-emoji">🏎️</span>
+                <div class="vehicle-card-info">
+                  <h4>Speedy Buggy</h4>
+                  <p>Balanced classic all-rounder with expressive physics and responsive handling.</p>
+                </div>
+                <span class="vehicle-card-badge">Default Free</span>
+              </div>
+
+              <!-- Rig 2 -->
+              <div class="garage-vehicle-card" data-vehicle="monster">
+                <span class="vehicle-card-emoji">🛞</span>
+                <div class="vehicle-card-info">
+                  <h4>Mega Monster Truck</h4>
+                  <p>Giant knobby tires, extreme hill-climbing torque, and heavy boulder-crushing stability.</p>
+                </div>
+                <span class="vehicle-card-badge">🪙 1,200 Coins</span>
+              </div>
+
+              <!-- Rig 3 -->
+              <div class="garage-vehicle-card" data-vehicle="apex">
+                <span class="vehicle-card-emoji">🏎️💨</span>
+                <div class="vehicle-card-info">
+                  <h4>Apex Turbo</h4>
+                  <p>Formula 1 supercar with high aerodynamic downforce and blistering top speed.</p>
+                </div>
+                <span class="vehicle-card-badge">🪙 2,500 Coins</span>
+              </div>
+
+              <!-- Rig 4 -->
+              <div class="garage-vehicle-card" data-vehicle="camper">
+                <span class="vehicle-card-emoji">🚐</span>
+                <div class="vehicle-card-info">
+                  <h4>Hippie Cruiser</h4>
+                  <p>Retro camper van with bouncy suspension, heavy ballast, and funky rhythmic wobble.</p>
+                </div>
+                <span class="vehicle-card-badge">🪙 500 Coins</span>
+              </div>
+
+              <!-- Rig 5 -->
+              <div class="garage-vehicle-card" data-vehicle="cyber">
+                <span class="vehicle-card-emoji">⚡</span>
+                <div class="vehicle-card-info">
+                  <h4>Cyber Pulse</h4>
+                  <p>Futuristic polygon hypercar with anti-gravity handling and vivid neon underglow.</p>
+                </div>
+                <span class="vehicle-card-badge">🪙 5,000 Coins</span>
+              </div>
+            </div>
+
+            <!-- Vehicle Performance Metrics -->
+            <div class="garage-stats-box">
+              <div class="garage-sub-title">
+                <span>Vehicle Performance Metrics</span>
+                <small>Flame Forge2D Physics</small>
+              </div>
+
+              <div class="garage-stats-grid">
+                <div class="stat-metric-row">
+                  <span class="stat-metric-name">Top Speed</span>
+                  <div class="stat-metric-track">
+                    <div class="stat-metric-fill" id="statSpeedBar" style="width: 82%;"></div>
+                  </div>
+                  <span class="stat-metric-val" id="statSpeedVal">82</span>
+                </div>
+
+                <div class="stat-metric-row">
+                  <span class="stat-metric-name">Hill Torque</span>
+                  <div class="stat-metric-track">
+                    <div class="stat-metric-fill" id="statTorqueBar" style="width: 74%;"></div>
+                  </div>
+                  <span class="stat-metric-val" id="statTorqueVal">74</span>
+                </div>
+
+                <div class="stat-metric-row">
+                  <span class="stat-metric-name">Suspension Bounce</span>
+                  <div class="stat-metric-track">
+                    <div class="stat-metric-fill" id="statBounceBar" style="width: 80%;"></div>
+                  </div>
+                  <span class="stat-metric-val" id="statBounceVal">80</span>
+                </div>
+
+                <div class="stat-metric-row">
+                  <span class="stat-metric-name">Downforce &amp; Grip</span>
+                  <div class="stat-metric-track">
+                    <div class="stat-metric-fill" id="statGripBar" style="width: 85%;"></div>
+                  </div>
+                  <span class="stat-metric-val" id="statGripVal">85</span>
+                </div>
+
+                <div class="stat-metric-row">
+                  <span class="stat-metric-name">Chassis Weight</span>
+                  <div class="stat-metric-track">
+                    <div class="stat-metric-fill" id="statWeightBar" style="width: 70%;"></div>
+                  </div>
+                  <span class="stat-metric-val" id="statWeightVal">70</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Real-Time Custom Paint Studio -->
+            <div class="garage-paint-studio">
+              <div class="garage-sub-title">
+                <span>🎨 Custom Paint Studio</span>
+                <small>4 Curated Palettes</small>
+              </div>
+
+              <div class="paint-swatches-row">
+                <button class="paint-swatch-btn active" data-color="#38b6ff">
+                  <span class="swatch-color-circle" style="background: #38b6ff;"></span>
+                  <span>Neon Azure</span>
+                </button>
+                <button class="paint-swatch-btn" data-color="#00f5d4">
+                  <span class="swatch-color-circle" style="background: #00f5d4;"></span>
+                  <span>Cyber Lime</span>
+                </button>
+                <button class="paint-swatch-btn" data-color="#f97316">
+                  <span class="swatch-color-circle" style="background: #f97316;"></span>
+                  <span>Sunset Blaze</span>
+                </button>
+                <button class="paint-swatch-btn" data-color="#a855f7">
+                  <span class="swatch-color-circle" style="background: #a855f7;"></span>
+                  <span>Ultraviolet</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ENDLESS SURVIVAL RUNNER ("INFINITE DRAW") (#infinite-mode)
+         ====================================================================== -->
+    <section class="section section-animate" id="infinite-mode">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">♾️ 2. Endless Survival Runner</span>
+          <h2 class="section-title">"Infinite Draw" Survival Runner Mode</h2>
+          <p class="section-subtitle">
+            Push your driving and engineering distance to the limit! Never play the same road twice
+            in this procedural endless survival challenge.
+          </p>
+        </div>
+
+        <div class="infinite-showcase-grid">
+          <!-- Left: High-Res Image Card -->
+          <div class="infinite-img-card">
+            <img src="/assets/images/infinite_runner.jpg" alt="Car Rush v2.0 Infinite Draw Mode" loading="lazy">
+            <span class="infinite-floating-tag">⚡ PROCEDURAL RUNWAY CHUNKS</span>
+            <span class="infinite-floating-record">🏆 DISTANCE: 1,420m</span>
+          </div>
+
+          <!-- Right: Key Mechanics -->
+          <div class="infinite-specs-grid">
+            <div class="infinite-spec-card">
+              <div class="infinite-spec-icon">🛣️</div>
+              <div class="infinite-spec-info">
+                <h4>Procedural Track Generation</h4>
+                <p>
+                  Never play the same road twice! The world dynamically generates runway chunks, floating bridges,
+                  and deep canyon chasms ahead as you race forward.
+                </p>
+              </div>
+            </div>
+
+            <div class="infinite-spec-card">
+              <div class="infinite-spec-icon">⛽</div>
+              <div class="infinite-spec-info">
+                <h4>Supercharged 3,500px Pen Tank</h4>
+                <p>
+                  Ink capacity boosted to <strong>3,500 pixels</strong> (3x standard capacity) with a
+                  <strong>55% ink discount</strong> so you can draw massive, sweeping bridge architectures.
+                </p>
+              </div>
+            </div>
+
+            <div class="infinite-spec-card">
+              <div class="infinite-spec-icon">⚡</div>
+              <div class="infinite-spec-info">
+                <h4>Rapid Continuous Ink Recharge</h4>
+                <p>
+                  Enjoy fast continuous ink regeneration (up to <strong>220 px/sec</strong>) while driving at cruising
+                  speeds,
+                  rewarding momentum and flow.
+                </p>
+              </div>
+            </div>
+
+            <div class="infinite-spec-card">
+              <div class="infinite-spec-icon">🧪</div>
+              <div class="infinite-spec-info">
+                <h4>Floating Ink Refill Flasks</h4>
+                <p>
+                  Grab floating glowing ink bottles scattered along the route to instantly restore
+                  <strong>+800 pixels</strong> of ink on contact!
+                </p>
+              </div>
+            </div>
+
+            <div class="infinite-spec-card">
+              <div class="infinite-spec-icon">🏆</div>
+              <div class="infinite-spec-info">
+                <h4>Global High Score Records</h4>
+                <p>
+                  Survive dangerous chasm drops, set new distance records, and compare your personal best
+                  across the global player leaderboards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. DYNAMIC LIVE DRAWING & 5 MAGIC PENCILS (#magic-inks)
+         ====================================================================== -->
+    <section class="section section-animate" id="magic-inks">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">✏️ 3. Dynamic Live Drawing</span>
+          <h2 class="section-title">Draw While Driving &amp; 5 Magic Pencils</h2>
+          <p class="section-subtitle">
+            No more stopping! In v2.0, you can draw bridges on the fly while your toy car is cruising at full speed.
+            Master 5 specialized magic inks for tactical bridge building:
+          </p>
+        </div>
+
+        <div class="magic-inks-grid">
+          <!-- Ink 1 -->
+          <div class="magic-ink-card active" data-ink="asphalt">
+            <span class="ink-card-icon">🛣️</span>
+            <h4 class="ink-card-title">Normal Asphalt</h4>
+            <p class="ink-card-desc">Classic solid grip road with balanced friction and high stability for standard
+              cruising.</p>
+            <div class="ink-sample-line ink-sample-asphalt"></div>
+          </div>
+
+          <!-- Ink 2 -->
+          <div class="magic-ink-card" data-ink="spring">
+            <span class="ink-card-icon">🌸</span>
+            <h4 class="ink-card-title">Bouncy Spring</h4>
+            <p class="ink-card-desc">High-launch pink trampoline coils that catapult vehicles sky-high over canyon gaps!
+            </p>
+            <div class="ink-sample-line ink-sample-spring"></div>
+          </div>
+
+          <!-- Ink 3 -->
+          <div class="magic-ink-card" data-ink="boost">
+            <span class="ink-card-icon">⚡</span>
+            <h4 class="ink-card-title">Boost Accelerator</h4>
+            <p class="ink-card-desc">Super-speed yellow launch pad with nitro turbo boost to surge past wide chasms.</p>
+            <div class="ink-sample-line ink-sample-boost"></div>
+          </div>
+
+          <!-- Ink 4 -->
+          <div class="magic-ink-card" data-ink="armor">
+            <span class="ink-card-icon">🛡️</span>
+            <h4 class="ink-card-title">Heavy Armor</h4>
+            <p class="ink-card-desc">Blue reinforced shield bridge engineered to withstand rolling boulders and falling
+              traps.</p>
+            <div class="ink-sample-line ink-sample-armor"></div>
+          </div>
+
+          <!-- Ink 5 -->
+          <div class="magic-ink-card" data-ink="ghost">
+            <span class="ink-card-icon">👻</span>
+            <h4 class="ink-card-title">Ghost Bridge</h4>
+            <p class="ink-card-desc">Temporary purple phantom bridge that dissolves into vapor 2 seconds after crossing.
+            </p>
+            <div class="ink-sample-line ink-sample-ghost"></div>
+          </div>
+        </div>
+
+        <!-- Live Drawing Spotlight Card -->
+        <div class="live-draw-spotlight">
+          <div class="live-draw-info">
+            <h3>🎨 Real-Time On-The-Fly Bridge Construction</h3>
+            <p>
+              Missed your landing? Car falling into a chasm? Simply drag your finger in real time to catch your car
+              mid-air
+              and guide it safely to the finish line!
+            </p>
+          </div>
+          <a href="#simulator" class="btn-primary" style="white-space: nowrap;">
+            <span>Try Drawing Now</span>
+            <span aria-hidden="true">✏️</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. KINETIC HAZARDS & WORLD COMPONENTS (#kinetic-hazards)
+         ====================================================================== -->
+    <section class="section section-animate" id="kinetic-hazards">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">⚙️ 4. Kinetic Hazards</span>
+          <h2 class="section-title">Moving Platforms &amp; Laser Electric Gates</h2>
+          <p class="section-subtitle">
+            World environments come alive with interactive machinery, timed electric gates, and nitro launch pads.
+          </p>
+        </div>
+
+        <div class="kinetic-hazards-layout">
+          <!-- Left Image Card -->
+          <div class="kinetic-img-wrap">
+            <img src="/assets/images/kinetic_hazards.jpg" alt="Car Rush v2.0 Kinetic Hazards" loading="lazy">
+          </div>
+
+          <!-- Right Grid -->
+          <div class="kinetic-items-grid">
+            <div class="kinetic-hazard-item">
+              <div class="kinetic-hazard-header">
+                <span class="kinetic-hazard-emoji">🟦</span>
+                <h4>Moving Kinetic Platforms</h4>
+              </div>
+              <p>
+                Floating hydraulic platforms that glide horizontally and vertically. Bridge onto them with precision
+                timing!
+              </p>
+            </div>
+
+            <div class="kinetic-hazard-item">
+              <div class="kinetic-hazard-header">
+                <span class="kinetic-hazard-emoji">🚀</span>
+                <h4>Speed Boost Nitro Pads</h4>
+              </div>
+              <p>
+                Nitro launch ramps placed across tracks that fling vehicles over monumental canyon gaps at blistering
+                speeds.
+              </p>
+            </div>
+
+            <div class="kinetic-hazard-item">
+              <div class="kinetic-hazard-header">
+                <span class="kinetic-hazard-emoji">⚡</span>
+                <h4>Laser &amp; Electric Gates</h4>
+              </div>
+              <p>
+                Timed high-voltage energy barriers cycling through <strong>Active</strong>, <strong>Warning</strong>,
+                and <strong>Safe</strong> states.
+              </p>
+            </div>
+
+            <div class="kinetic-hazard-item">
+              <div class="kinetic-hazard-header">
+                <span class="kinetic-hazard-emoji">🪚</span>
+                <h4>Environmental Hazards</h4>
+              </div>
+              <p>
+                Rotating circular spike gears, bubbling lava pits, and rolling boulder traps that test your vehicle's
+                armor and chassis weight.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. RESPONSIVE DISPLAY & CAMERA OVERHAUL (#camera-engine)
+         ====================================================================== -->
+    <section class="section section-animate" id="camera-engine">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">📱 5. Responsive Display &amp; Camera</span>
+          <h2 class="section-title">Engineered For Flawless Performance</h2>
+          <p class="section-subtitle">
+            Experience silky-smooth dynamic tracking and full responsive layout adaptability across all screens.
+          </p>
+        </div>
+
+        <div class="camera-engine-grid">
+          <div class="camera-card">
+            <div class="camera-icon">🎥</div>
+            <div class="camera-card-info">
+              <h4>Lockstep Dynamic Camera</h4>
+              <p>
+                Our intelligent camera engine follows the car rightward with sub-pixel interpolation,
+                anticipating slope changes and never losing sight of the roadway or upcoming canyon chasms.
+              </p>
+            </div>
+          </div>
+
+          <div class="camera-card">
+            <div class="camera-icon">📱</div>
+            <div class="camera-card-info">
+              <h4>Adaptive UI Layout (360px+)</h4>
+              <p>
+                Comprehensive RenderFlex layout optimization ensures perfect pixel-fit across all screen sizes,
+                foldable devices, compact budget phones (360px+), and high-resolution tablets.
+              </p>
             </div>
           </div>
         </div>
@@ -513,8 +1239,50 @@
               <span class="faq-toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              Yes! Car Rush: Draw & Drive is completely free to download and play. All levels can be unlocked naturally
+              Yes! Car Rush: Draw &amp; Drive is completely free to download and play. All levels can be unlocked
+              naturally
               through gameplay and star progression without requiring any paywalls.
+            </div>
+          </div>
+
+          <!-- FAQ: What's new in v2.0 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">What's new in Car Rush: Draw &amp; Drive v2.0?</span>
+              <span class="faq-toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Car Rush v2.0 is our biggest update ever! It features: (1) Brand-new Garage with 5 unique vehicle rigs and
+              live 3D showroom with custom paint; (2) Endless Survival Runner mode ("Infinite Draw") with procedural
+              track generation, a 3,500px pen tank, and ink refill flasks; (3) Live drawing while driving; (4) 5
+              specialized Magic Inks (Asphalt, Spring, Boost, Armor, Ghost); (5) Kinetic hazards like moving platforms
+              and laser gates; and (6) Lockstep dynamic camera tracking with full responsive layout optimization!
+            </div>
+          </div>
+
+          <!-- FAQ: How to unlock Garage cars -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">How do I unlock custom vehicles in the Garage?</span>
+              <span class="faq-toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              Speedy Buggy is ready to drive immediately from the start. You can unlock Mega Monster Truck, Apex Turbo,
+              Hippie Cruiser, and Cyber Pulse through level stars, stage milestones, and gameplay achievements!
+            </div>
+          </div>
+
+          <!-- FAQ: 5 Magic Inks -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">What are the 5 Magic Inks and how do they work?</span>
+              <span class="faq-toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              The 5 Magic Inks are: 🛣️ Normal Asphalt (balanced grip road), 🌸 Bouncy Spring (pink trampoline coil that
+              bounces you high over chasms), ⚡ Boost Accelerator (yellow nitro launch pad for speed surges), 🛡️ Heavy
+              Armor (reinforced shield bridge that withstands falling boulders), and 👻 Ghost Bridge (temporary phantom
+              mist that dissolves 2 seconds after crossing).
             </div>
           </div>
 
@@ -582,8 +1350,8 @@
           </p>
 
           <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="store-badge-card"
-              style="background: #0b1120;">
+            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank"
+              rel="noopener" class="store-badge-card" style="background: #0b1120;">
               <span class="store-badge-icon" aria-hidden="true">🤖</span>
               <div class="store-badge-texts">
                 <span class="store-badge-caption">GET IT ON</span>
@@ -591,8 +1359,8 @@
               </div>
             </a>
 
-            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="store-badge-card"
-              style="background: #0b1120;">
+            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank"
+              rel="noopener" class="store-badge-card" style="background: #0b1120;">
               <span class="store-badge-icon" aria-hidden="true">🍏</span>
               <div class="store-badge-texts">
                 <span class="store-badge-caption">Download on the</span>
@@ -626,9 +1394,12 @@
           </p>
           <!-- Social Media Links -->
           <div class="footer-social-row">
-            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="footer-social-link" title="Google Play" aria-label="Google Play">🤖</a>
-            <a href="https://appstick.com.bd" target="_blank" rel="noopener" class="footer-social-link" title="Website" aria-label="Appstick Website">🌐</a>
-            <a href="mailto:support@appstick.com.bd" class="footer-social-link" title="Email Support" aria-label="Email">✉️</a>
+            <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank"
+              rel="noopener" class="footer-social-link" title="Google Play" aria-label="Google Play">🤖</a>
+            <a href="https://appstick.com.bd" target="_blank" rel="noopener" class="footer-social-link" title="Website"
+              aria-label="Appstick Website">🌐</a>
+            <a href="mailto:support@appstick.com.bd" class="footer-social-link" title="Email Support"
+              aria-label="Email">✉️</a>
           </div>
         </div>
 
@@ -685,19 +1456,20 @@
         <span class="dock-icon" aria-hidden="true">🏠</span>
         <span>Home</span>
       </a>
+      <a href="#v2-showcase" class="dock-item" id="dockNavV2">
+        <span class="dock-icon" aria-hidden="true">🚀</span>
+        <span>v2.0</span>
+      </a>
+      <a href="#garage" class="dock-item" id="dockNavGarage">
+        <span class="dock-icon" aria-hidden="true">🏆</span>
+        <span>Garage</span>
+      </a>
       <a href="#simulator" class="dock-item" id="dockNavPlay">
         <span class="dock-icon" aria-hidden="true">🎮</span>
         <span>Demo</span>
       </a>
-      <a href="#biomes" class="dock-item" id="dockNavBiomes">
-        <span class="dock-icon" aria-hidden="true">🌍</span>
-        <span>Biomes</span>
-      </a>
-      <a href="/privacy" class="dock-item" id="dockNavPrivacy">
-        <span class="dock-icon" aria-hidden="true">🛡️</span>
-        <span>Privacy</span>
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener" class="dock-item dock-cta" id="dockNavGet">
+      <a href="https://play.google.com/store/apps/details?id=bd.com.appstick.currush" target="_blank" rel="noopener"
+        class="dock-item dock-cta" id="dockNavGet">
         <span class="dock-icon" aria-hidden="true">⬇️</span>
         <span>Get</span>
       </a>
